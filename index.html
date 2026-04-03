@@ -769,63 +769,7 @@
         </div>
     </section>
 
-    <!-- RADAR DE OPORTUNIDADES MAGALLANES (ENCUADRE DE ÉLITE) -->
-    <section class="py-20 lg:py-24 px-6 md:min-h-screen flex items-center relative" id="radar">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <!-- COLUMNA 1: MAPA DINÁMICO (IZQUIERDA) -->
-                <div class="reveal relative flex justify-center order-2 lg:order-1">
-                    <div class="map-container">
-                        <!-- Tactical Radar Overlays -->
-                        <div class="map-grid"></div>
-                        <div class="map-scan"></div>
-                        
-                        <!-- Enhanced Stylized Magallanes & Tierra del Fuego Map -->
-                        <svg class="map-svg relative z-10" viewBox="0 -50 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Tactical Rings -->
-                            <circle cx="250" cy="350" r="100" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
-                            <circle cx="250" cy="350" r="200" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
-                            <circle cx="250" cy="350" r="300" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
-                            
-                            <!-- Continent Path -->
-                            <path class="map-path" d="M120 40L140 60L180 55L220 70L240 120L280 140L300 200L340 220L310 280L330 350L310 400L250 420L200 450L150 400L160 300L120 250L80 200L100 100L120 40Z" style="fill:rgba(10,17,69,0.9); stroke:rgba(40,228,211,0.6);" />
-                            <!-- Tierra del Fuego Path -->
-                            <path class="map-path" d="M300 450L450 480L480 600L400 650L300 600L280 550L300 450Z" style="fill:rgba(10,17,69,0.9); stroke:rgba(239,68,68,0.4);" />
-                        </svg>
 
-                        <!-- PUNTOS TÁCTICOS -->
-                        <div class="map-node" style="top: 12%; left: 32%;" onmouseenter="updateDisplay('Paine: El Origen', 'Eco-Luxury Global Hub', 'Búsquedas internacionales (+45%). La falta de UX móvil desvía el 60% a OTAs.', '💎 Oportunidad: Direct Booking', '#28e4d3')" onmouseleave="resetDisplay()"><div class="ping"></div></div>
-                        <div class="map-node" style="top: 32%; left: 42%;" onmouseenter="updateDisplay('Puerto Natales', 'Adventure Experience', 'El 80% planea vía Google Maps. Sin autoridad World-Class, eres invisible.', '📈 Impacto: Fuga de Comisiones', '#28e4d3')" onmouseleave="resetDisplay()"><div class="ping"></div></div>
-                        <div class="map-node" style="top: 55%; left: 38%;" onmouseenter="updateDisplay('Punta Arenas', 'Antarctic Hub', 'Demanda 24/7 de cotizaciones. Sin IA pierdes al cliente antes de aterrizar.', '📡 Oportunidad IA: Crítica', '#28e4d3')" onmouseleave="resetDisplay()"><div class="ping"></div></div>
-                        <div class="map-node" style="top: 78%; left: 78%;" onmouseenter="updateDisplay('Tierra del Fuego', 'Remote Frontiers', 'Nuevo Must para buscadores de silencio. Potencial de Branding 100% virgen.', '🧭 Potencial: Dominio Total', '#ef4444')" onmouseleave="resetDisplay()"><div class="ping" style="background:#ef4444; box-shadow:0 0 15px rgba(239,68,68,0.5);"></div></div>
-                    </div>
-                </div>
-
-                <!-- COLUMNA 2: INTELIGENCIA ESTRATÉGICA (DERECHA) -->
-                <div class="reveal order-1 lg:order-2">
-                    <span class="neon-text text-[10px] font-black tracking-[0.4em] uppercase mb-4 block text-center lg:text-left">Visión Territorial</span>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-6 text-center lg:text-left">
-                        Radar de <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#28e4d3]">Oportunidades</span>
-                    </h2>
-                    <p class="text-white/40 text-base md:text-lg font-light leading-relaxed mb-8 italic max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-                        Brechas digitales por zona para que tu marca tome ventaja este 2026.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <!-- SIDEBAR INTELLIGENCE DISPLAY -->
-                        <div id="central-display" class="info-display-box min-h-[300px]">
-                            <div class="info-display-placeholder text-center w-full">
-                                <i data-lucide="crosshair" class="w-8 h-8 mx-auto mb-4 opacity-30"></i>
-                                EXPLORAR REGIÓN
-                                <p class="text-[8px] opacity-30 mt-4 tracking-normal font-light">Interactúa con los puntos del radar para proyectar Insights</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
 
 
     <!-- SECCIÓN: EL GRAN DOLOR (LA CRUDA REALIDAD) -->
@@ -1261,6 +1205,63 @@
                         </p>
                     </div>
                     <a href="#contacto" class="px-14 py-7 bg-[#28e4d3] text-[#050a30] font-black rounded-2xl transition-all hover:scale-105 shadow-[0_0_40px_rgba(40,228,211,0.6)] uppercase tracking-widest text-sm shine-btn">RESERVAR MI CUPO 26/27</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RADAR DE OPORTUNIDADES MAGALLANES (ENCUADRE DE ÉLITE) -->
+    <section class="py-20 lg:py-24 px-6 md:min-h-screen flex items-center relative" id="radar">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- COLUMNA 1: MAPA DINÁMICO (IZQUIERDA) -->
+                <div class="reveal relative flex justify-center order-2 lg:order-1">
+                    <div class="map-container">
+                        <!-- Tactical Radar Overlays -->
+                        <div class="map-grid"></div>
+                        <div class="map-scan"></div>
+                        
+                        <!-- Enhanced Stylized Magallanes & Tierra del Fuego Map -->
+                        <svg class="map-svg relative z-10" viewBox="0 -50 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Tactical Rings -->
+                            <circle cx="250" cy="350" r="100" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
+                            <circle cx="250" cy="350" r="200" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
+                            <circle cx="250" cy="350" r="300" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
+                            
+                            <!-- Continent Path -->
+                            <path class="map-path" d="M120 40L140 60L180 55L220 70L240 120L280 140L300 200L340 220L310 280L330 350L310 400L250 420L200 450L150 400L160 300L120 250L80 200L100 100L120 40Z" style="fill:rgba(10,17,69,0.9); stroke:rgba(40,228,211,0.6);" />
+                            <!-- Tierra del Fuego Path -->
+                            <path class="map-path" d="M300 450L450 480L480 600L400 650L300 600L280 550L300 450Z" style="fill:rgba(10,17,69,0.9); stroke:rgba(239,68,68,0.4);" />
+                        </svg>
+
+                        <!-- PUNTOS TÁCTICOS -->
+                        <div class="map-node" style="top: 12%; left: 32%;" onmouseenter="updateDisplay('Paine: El Origen', 'Eco-Luxury Global Hub', 'Búsquedas internacionales (+45%). La falta de UX móvil desvía el 60% a OTAs.', '💎 Oportunidad: Direct Booking', '#28e4d3')" onmouseleave="resetDisplay()"><div class="ping"></div></div>
+                        <div class="map-node" style="top: 32%; left: 42%;" onmouseenter="updateDisplay('Puerto Natales', 'Adventure Experience', 'El 80% planea vía Google Maps. Sin autoridad World-Class, eres invisible.', '📈 Impacto: Fuga de Comisiones', '#28e4d3')" onmouseleave="resetDisplay()"><div class="ping"></div></div>
+                        <div class="map-node" style="top: 55%; left: 38%;" onmouseenter="updateDisplay('Punta Arenas', 'Antarctic Hub', 'Demanda 24/7 de cotizaciones. Sin IA pierdes al cliente antes de aterrizar.', '📡 Oportunidad IA: Crítica', '#28e4d3')" onmouseleave="resetDisplay()"><div class="ping"></div></div>
+                        <div class="map-node" style="top: 78%; left: 78%;" onmouseenter="updateDisplay('Tierra del Fuego', 'Remote Frontiers', 'Nuevo Must para buscadores de silencio. Potencial de Branding 100% virgen.', '🧭 Potencial: Dominio Total', '#ef4444')" onmouseleave="resetDisplay()"><div class="ping" style="background:#ef4444; box-shadow:0 0 15px rgba(239,68,68,0.5);"></div></div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: INTELIGENCIA ESTRATÉGICA (DERECHA) -->
+                <div class="reveal order-1 lg:order-2">
+                    <span class="neon-text text-[10px] font-black tracking-[0.4em] uppercase mb-4 block text-center lg:text-left">Visión Territorial</span>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-6 text-center lg:text-left">
+                        Radar de <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#28e4d3]">Oportunidades</span>
+                    </h2>
+                    <p class="text-white/40 text-base md:text-lg font-light leading-relaxed mb-8 italic max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+                        Brechas digitales por zona para que tu marca tome ventaja este 2026.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <!-- SIDEBAR INTELLIGENCE DISPLAY -->
+                        <div id="central-display" class="info-display-box min-h-[300px]">
+                            <div class="info-display-placeholder text-center w-full">
+                                <i data-lucide="crosshair" class="w-8 h-8 mx-auto mb-4 opacity-30"></i>
+                                EXPLORAR REGIÓN
+                                <p class="text-[8px] opacity-30 mt-4 tracking-normal font-light">Interactúa con los puntos del radar para proyectar Insights</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
