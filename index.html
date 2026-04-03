@@ -796,8 +796,16 @@
                             <p class="text-white/40 text-[10px] leading-tight">Implementación de ecosistemas IA para atención 24/7 en el Hub logístico.</p>
                         </div>
                         <div class="p-4 bg-white/5 border-l-2 border-red-500 rounded-r-xl hover:bg-white/10 transition-colors">
-                            <h4 class="text-white font-bold uppercase tracking-widest text-[9px] mb-1">TdF: La Frontera</h4>
+                            <h4 class="text-white font-bold uppercase tracking-widest text-[9px] mb-1">Tierra del Fuego: La Frontera</h4>
                             <p class="text-white/40 text-[10px] leading-tight">Posicionamiento 100% virgen para destinos de exploración y pesca de élite.</p>
+                        </div>
+                    </div>
+
+                    <!-- SIDEBAR INTELLIGENCE DISPLAY -->
+                    <div id="central-display" class="info-display-box">
+                        <div class="info-display-placeholder text-center w-full">
+                            <i data-lucide="crosshair" class="w-6 h-6 mx-auto mb-3 opacity-30"></i>
+                            Explorar Región
                         </div>
                     </div>
                 </div>
@@ -807,14 +815,6 @@
                         <!-- Tactical Radar Overlays -->
                         <div class="map-grid"></div>
                         <div class="map-scan"></div>
-                        
-                        <!-- CENTRAL DISPLAY PANEL -->
-                        <div id="central-display" class="info-display-box">
-                            <div class="info-display-placeholder">
-                                <i data-lucide="crosshair" class="w-8 h-8 mx-auto mb-4 opacity-50"></i>
-                                Seleccione Objetivo
-                            </div>
-                        </div>
                         
                         <!-- Enhanced Stylized Magallanes & Tierra del Fuego Map -->
                         <svg class="map-svg relative z-10" viewBox="0 -50 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -849,7 +849,7 @@
                         </div>
 
                         <div class="map-node" style="top: 78%; left: 78%;" 
-                             onmouseenter="updateDisplay('T. del Fuego', 'Remote Frontiers', 'Nuevo Must para buscadores de silencio. Potencial de Branding 100% virgen.', '🧭 Potencial: Dominio Total', '#ef4444')"
+                             onmouseenter="updateDisplay('Tierra del Fuego', 'Remote Frontiers', 'Nuevo Must para buscadores de silencio. Potencial de Branding 100% virgen.', '🧭 Potencial: Dominio Total', '#ef4444')"
                              onmouseleave="resetDisplay()">
                             <div class="ping" style="background:#ef4444; box-shadow:0 0 15px rgba(239,68,68,0.5);"></div>
                         </div>
@@ -1921,12 +1921,11 @@
         function resetDisplay() {
             const display = document.getElementById('central-display');
             if(!display) return;
-            display.style.transform = 'translate(-50%, -50%) scale(0.95)';
             display.style.opacity = '0.8';
             display.innerHTML = `
-                <div class="info-display-placeholder text-center">
-                    <i data-lucide="crosshair" class="w-8 h-8 mx-auto mb-4 opacity-50"></i>
-                    Seleccione Objetivo
+                <div class="info-display-placeholder text-center w-full">
+                    <i data-lucide="crosshair" class="w-6 h-6 mx-auto mb-3 opacity-30"></i>
+                    Explorar Región
                 </div>
             `;
             if(window.lucide) lucide.createIcons();
@@ -1935,17 +1934,16 @@
         function updateDisplay(title, subtitle, desc, metric, color) {
             const display = document.getElementById('central-display');
             if(!display) return;
-            display.style.transform = 'translate(-50%, -50%) scale(1)';
             display.style.opacity = '1';
-            display.style.borderColor = color + '80';
+            display.style.borderColor = color + '40';
             display.innerHTML = `
-                <div class="text-left animate-fade-in" style="width: 100%;">
+                <div class="text-left animate-fade-in w-full">
                     <div class="flex items-center gap-2 mb-2">
                         <div class="w-2 h-2 rounded-full" style="background: ${color}"></div>
                         <div class="node-title" style="color: ${color}; margin-bottom: 0;">${title}</div>
                     </div>
-                    <div class="node-subtitle" style="font-size: 0.55rem;">${subtitle}</div>
-                    <div class="node-desc" style="font-size: 0.72rem; line-height: 1.3; margin-bottom: 0.6rem; color: rgba(255,255,255,0.9);">${desc}</div>
+                    <div class="node-subtitle" style="font-size: 0.55rem; color: rgba(255,255,255,0.4);">${subtitle}</div>
+                    <div class="node-desc" style="font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.6rem; color: rgba(255,255,255,0.8);">${desc}</div>
                     <div class="node-metric" style="color: ${color}; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem; font-size: 0.65rem;">${metric}</div>
                 </div>
             `;
