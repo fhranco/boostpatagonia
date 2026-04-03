@@ -70,6 +70,9 @@
             --accent-cyan: #28e4d3;
             --glass-bg: rgba(255, 255, 255, 0.05);
             --neon-glow: 0 0 15px rgba(40, 228, 211, 0.4);
+
+            /* Scroll Progress */
+            --scroll-bg: linear-gradient(90deg, #28e4d3, #ef4444);
             
             /* Heritage Design System Tokens */
             --font-display: 'Sora', sans-serif;
@@ -102,6 +105,18 @@
             background-color: var(--primary-dark);
             color: white;
             overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--scroll-bg);
+            z-index: 10000;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 12px rgba(40, 228, 211, 0.5);
         }
 
         .glass {
@@ -534,7 +549,7 @@
 </head>
 <body>
 
-    <div id="scrollProgress" aria-hidden="true"></div>
+    <div id="scroll-progress" aria-hidden="true"></div>
 
     <nav class="fixed top-0 w-full z-50 transition-all duration-300 px-6 py-2" id="navbar">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-2 mt-2 text-white">
@@ -1682,6 +1697,13 @@
                     "max-glare": 0.1,
                 });
             }
+
+            // Scroll Progress Bar Update
+            window.addEventListener('scroll', () => {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (window.scrollY / totalHeight) * 100;
+                document.getElementById('scroll-progress').style.width = `${progress}%`;
+            });
         });
     </script>
 </body>
