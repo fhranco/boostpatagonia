@@ -566,7 +566,8 @@
         .map-grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(40,228,211,0.1) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; opacity: 0.3; }
 
         /* Prevent clipping for info cards */
-        .map-container { overflow: visible !important; }
+        .map-container { overflow: visible !important; min-height: 400px; }
+        @media(min-width: 1024px) { .map-container { min-height: 550px; } }
     </style>
     <script type="application/ld+json">
     {
@@ -763,35 +764,31 @@
         </div>
     </section>
 
-    <!-- RADAR DE OPORTUNIDADES MAGALLANES -->
-    <section class="py-40 px-6 relative" id="radar">
+    <!-- RADAR DE OPORTUNIDADES MAGALLANES (ENCUADRE DE ÉLITE) -->
+    <section class="py-20 lg:py-24 px-6 md:min-h-screen flex items-center relative" id="radar">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div class="reveal">
                     <span class="neon-text text-[10px] font-black tracking-[0.4em] uppercase mb-4 block">Visión Territorial</span>
-                    <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-tight mb-8">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-6">
                         Radar de <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#28e4d3]">Oportunidades</span>
                     </h2>
-                    <p class="text-white/40 text-lg md:text-xl font-light leading-relaxed mb-10 italic">
-                        Magallanes no es una zona cualquiera; es el destino más codiciado. Hemos mapeado las brechas digitales de cada zona para que tu marca tome ventaja este 2026.
+                    <p class="text-white/40 text-base md:text-lg font-light leading-relaxed mb-8 italic max-w-md">
+                        Brechas digitales por zona para que tu marca tome ventaja este 2026.
                     </p>
                     
                     <div class="space-y-4">
-                        <div class="p-5 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-2xl hover:bg-white/10 transition-colors">
-                            <h4 class="text-white font-bold uppercase tracking-widest text-[10px] mb-1">Paine: El Origen (Lujo)</h4>
-                            <p class="text-white/40 text-[11px] leading-tight">Optimización de reservas directas para capturar el mercado de ultra-lujo global.</p>
+                        <div class="p-4 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-xl hover:bg-white/10 transition-colors">
+                            <h4 class="text-white font-bold uppercase tracking-widest text-[9px] mb-1">Paine: El Origen</h4>
                         </div>
-                        <div class="p-5 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-2xl hover:bg-white/10 transition-colors">
-                            <h4 class="text-white font-bold uppercase tracking-widest text-[10px] mb-1">Natales: Conversión</h4>
-                            <p class="text-white/40 text-[11px] leading-tight">Estrategias de Branding para eliminar la dependencia de comisiones de OTAs.</p>
+                        <div class="p-4 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-xl hover:bg-white/10 transition-colors">
+                            <h4 class="text-white font-bold uppercase tracking-widest text-[9px] mb-1">Natales: Conversión</h4>
                         </div>
-                        <div class="p-5 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-2xl hover:bg-white/10 transition-colors">
-                            <h4 class="text-white font-bold uppercase tracking-widest text-[10px] mb-1">P. Arenas: Inteligencia</h4>
-                            <p class="text-white/40 text-[11px] leading-tight">Implementación de IA para atención 24/7 en el Hub logístico Antártico.</p>
+                        <div class="p-4 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-xl hover:bg-white/10 transition-colors">
+                            <h4 class="text-white font-bold uppercase tracking-widest text-[9px] mb-1">P. Arenas: Inteligencia</h4>
                         </div>
-                        <div class="p-5 bg-white/5 border-l-2 border-red-500 rounded-r-2xl hover:bg-white/10 transition-colors">
-                            <h4 class="text-white font-bold uppercase tracking-widest text-[10px] mb-1">TdF: La Frontera</h4>
-                            <p class="text-white/40 text-[11px] leading-tight">Posicionamiento de marca para destinos de exploración remota y pesca.</p>
+                        <div class="p-4 bg-white/5 border-l-2 border-red-500 rounded-r-xl hover:bg-white/10 transition-colors">
+                            <h4 class="text-white font-bold uppercase tracking-widest text-[9px] mb-1">TdF: La Frontera</h4>
                         </div>
                     </div>
                 </div>
