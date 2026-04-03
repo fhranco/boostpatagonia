@@ -534,6 +534,17 @@
             mix-blend-mode: screen;
         }
         #planes:hover .spotlight-planes { opacity: 1; }
+
+        /* Calculator Styles */
+        .calculator-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px); border-radius: 3rem; padding: 3rem; }
+        .calc-slider { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; outline: none; margin: 20px 0; }
+        .calc-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; background: var(--accent-cyan); border-radius: 50%; cursor: pointer; border: 4px solid #050a30; box-shadow: 0 0 15px rgba(40,228,211,0.4); transition: transform 0.2s; }
+        .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+        .calc-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); display: flex; justify-content: space-between; align-items: center; }
+        .calc-value { color: var(--accent-cyan); font-weight: 900; font-size: 1.1rem; }
+        .result-box { background: rgba(239, 68, 68, 0.05); border: 1px dashed rgba(239, 68, 68, 0.3); border-radius: 2rem; padding: 2rem; text-align: center; }
+        .result-number { font-family: var(--font-display); font-size: 3.5rem; font-weight: 900; line-height: 1; color: #ef4444; text-shadow: 0 0 30px rgba(239,68,68,0.4); margin-bottom: 0.5rem; }
+        .leak-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; color: #ef4444; opacity: 0.8; }
     </style>
     <script type="application/ld+json">
     {
@@ -882,6 +893,51 @@
             </div>
         </div>
     </section>
+
+    <!-- CALCULADORA ROI (WOAH FACTOR) -->
+    <section class="py-32 px-6 bg-gradient-to-b from-[#0a1145] to-[#050a30] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16">
+                        <span class="inline-block py-1 px-4 rounded-full bg-red-500/10 border border-red-500/20 text-[#ef4444] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Diagnóstico de Fuga de Ingresos</span>
+                        <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight">
+                            Calcula tu Potencial <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Invisible para 2026/2027</span>
+                        </h3>
+                        <p class="text-white/40 mt-6 max-w-xl mx-auto text-lg leading-relaxed font-light italic">Descubre cuánto dinero "muere" en tu proceso actual por falta de automatización y optimización de conversión.</p>
+                    </div>
+
+                    <div class="calculator-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-10">
+                            <div>
+                                <div class="calc-label"><span>Visitas Mensuales</span> <span class="calc-value" id="val-visitas">1.500</span></div>
+                                <input type="range" min="100" max="10000" step="100" value="1500" class="calc-slider" id="slider-visitas">
+                            </div>
+                            <div>
+                                <div class="calc-label"><span>Conversión Actual (%)</span> <span class="calc-value" id="val-conv">0.8</span></div>
+                                <input type="range" min="0.1" max="5" step="0.1" value="0.8" class="calc-slider" id="slider-conv">
+                            </div>
+                            <div>
+                                <div class="calc-label"><span>Ticket Promedio (USD)</span> <span class="calc-value" id="val-ticket">120</span></div>
+                                <input type="range" min="50" max="1000" step="10" value="120" class="calc-slider" id="slider-ticket">
+                            </div>
+                        </div>
+
+                        <div class="result-box relative overflow-hidden group">
+                            <div class="relative z-10">
+                                <p class="leak-label mb-2">Ingresos Perdidos / Mes</p>
+                                <div class="result-number" id="roi-result">$0</div>
+                                <p class="text-white/50 text-[10px] font-bold uppercase tracking-[0.2em] mt-2">Potencial de Recuperación Boost</p>
+                                <a href="#contacto" class="inline-block mt-8 py-4 px-8 bg-[#ef4444] text-white font-black rounded-xl uppercase tracking-widest text-[10px] shadow-[0_0_30px_rgba(239,68,68,0.4)] transition-all hover:scale-105">Recuperar mis ingresos</a>
+                            </div>
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-red-600/20 blur-[100px] pointer-events-none group-hover:bg-red-600/40 transition-all duration-700"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- ═══════════════════════════════════════════
      SECCIÓN: PLANES
      ═══════════════════════════════════════════ -->
@@ -1704,6 +1760,36 @@
                 const progress = (window.scrollY / totalHeight) * 100;
                 document.getElementById('scroll-progress').style.width = `${progress}%`;
             });
+
+            // ROI Calculator Logic
+            const sVisitas = document.getElementById('slider-visitas');
+            const sConv = document.getElementById('slider-conv');
+            const sTicket = document.getElementById('slider-ticket');
+            
+            const vVisitas = document.getElementById('val-visitas');
+            const vConv = document.getElementById('val-conv');
+            const vTicket = document.getElementById('val-ticket');
+            const roiResult = document.getElementById('roi-result');
+
+            const calculateROI = () => {
+                const visitas = parseInt(sVisitas.value);
+                const convActual = parseFloat(sConv.value) / 100;
+                const ticket = parseInt(sTicket.value);
+                const convBoost = 0.03; // Objetivo Boost 3%
+
+                vVisitas.textContent = visitas.toLocaleString();
+                vConv.textContent = sConv.value;
+                vTicket.textContent = ticket.toLocaleString();
+
+                const ingresosActuales = visitas * convActual * ticket;
+                const ingresosBoost = visitas * convBoost * ticket;
+                const fuga = Math.max(0, ingresosBoost - ingresosActuales);
+
+                roiResult.textContent = `$${Math.round(fuga).toLocaleString()}`;
+            };
+
+            [sVisitas, sConv, sTicket].forEach(s => s.addEventListener('input', calculateROI));
+            calculateROI();
         });
     </script>
 </body>
