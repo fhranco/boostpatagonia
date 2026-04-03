@@ -537,7 +537,7 @@
 
         /* Calculator Styles */
         .calculator-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(20px); border-radius: 3rem; padding: 3rem; }
-        .calc-slider { -webkit-appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; outline: none; margin: 20px 0; }
+        .calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; outline: none; margin: 20px 0; }
         .calc-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; background: var(--accent-cyan); border-radius: 50%; cursor: pointer; border: 4px solid #050a30; box-shadow: 0 0 15px rgba(40,228,211,0.4); transition: transform 0.2s; }
         .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
         .calc-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.5); display: flex; justify-content: space-between; align-items: center; }
@@ -555,8 +555,10 @@
         @keyframes ping-anim { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(3.5); opacity: 0; } }
         .node-info { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(10px); width: 220px; background: rgba(5,10,48,0.9); backdrop-filter: blur(12px); border: 1px solid rgba(40,228,211,0.3); border-radius: 1.5rem; padding: 1.5rem; opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 30; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
         .map-node:hover .node-info { opacity: 1; transform: translateX(-50%) translateY(0); }
-        .node-title { font-size: 0.7rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 0.5rem; }
-        .node-desc { font-size: 0.8rem; line-height: 1.5; color: rgba(255,255,255,0.7); font-weight: 300; }
+        .node-title { font-size: 0.75rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 0.2rem; }
+        .node-subtitle { font-size: 0.6rem; font-weight: 700; color: rgba(255,255,255,0.4); margin-bottom: 0.6rem; text-transform: uppercase; }
+        .node-desc { font-size: 0.8rem; line-height: 1.5; color: rgba(255,255,255,0.8); font-weight: 300; margin-bottom: 0.8rem; }
+        .node-metric { font-size: 0.65rem; color: #ef4444; font-weight: 700; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem; display: block; }
     </style>
     <script type="application/ld+json">
     {
@@ -780,37 +782,59 @@
 
                 <div class="reveal relative flex justify-center">
                     <div class="map-container">
-                        <!-- Simplified Stylized Magallanes Map -->
-                        <svg class="map-svg" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="map-path" d="M120 40L140 60L180 55L220 70L240 120L280 140L300 200L340 220L310 280L330 350L310 400L350 480L320 540L280 500L220 520L180 580L120 540L80 480L100 400L60 320L80 220L120 180L100 120L120 40Z" />
-                            <path class="map-path" d="M380 420L420 440L450 480L430 520L380 540L360 480L380 420Z" />
+                        <!-- Enhanced Stylized Magallanes & Tierra del Fuego Map -->
+                        <svg class="map-svg" viewBox="0 -50 500 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Continent Path -->
+                            <path class="map-path" d="M120 40L140 60L180 55L220 70L240 120L280 140L300 200L340 220L310 280L330 350L310 400L250 420L200 450L150 400L160 300L120 250L80 200L100 100L120 40Z" />
+                            <!-- Tierra del Fuego Path -->
+                            <path class="map-path" d="M300 450L450 480L480 600L400 650L300 600L280 550L300 450Z" />
+                            <!-- Archipelago elements -->
+                            <circle cx="250" cy="500" r="10" class="map-path" />
+                            <circle cx="280" cy="480" r="8" class="map-path" />
                         </svg>
 
-                        <!-- PUNTOS INTERACTIVOS -->
+                        <!-- PUNTOS INTERACTIVOS REFINADOS -->
                         <!-- Torres del Paine -->
-                        <div class="map-node" style="top: 25%; left: 55%;">
+                        <div class="map-node" style="top: 15%; left: 35%;">
                             <div class="ping"></div>
                             <div class="node-info">
                                 <div class="node-title">Torres del Paine</div>
-                                <div class="node-desc">Mercado de ultra-lujo. Exigen carga web < 1s y reserva directa instantánea.</div>
+                                <div class="node-subtitle">Eco-Luxury & Solo Travelers</div>
+                                <div class="node-desc">Búsquedas globales de "Luxury Trekking" han crecido +45% en 2025. El viajero busca exclusividad digital y sostenibilidad verificada.</div>
+                                <span class="node-metric">🔥 Demanda insatisfecha: 65%</span>
                             </div>
                         </div>
 
                         <!-- Puerto Natales -->
-                        <div class="map-node" style="top: 40%; left: 65%;">
+                        <div class="map-node" style="top: 35%; left: 45%;">
                             <div class="ping"></div>
                             <div class="node-info">
                                 <div class="node-title">Puerto Natales</div>
-                                <div class="node-desc">Portal de aventura. El foco 2026 es el Branding Premium para escapar de las comisiones de Booking.</div>
+                                <div class="node-subtitle">Adventure & Slow Travel</div>
+                                <div class="node-desc">Hub de aventureros que planean con 12 meses de antelación. Buscan "Experiencias de Autor" y conexión local auténtica.</div>
+                                <span class="node-metric">📉 Fuga por comisiones OTAs: 35%</span>
                             </div>
                         </div>
 
                         <!-- Punta Arenas -->
-                        <div class="map-node" style="top: 65%; left: 60%;">
+                        <div class="map-node" style="top: 55%; left: 40%;">
                             <div class="ping"></div>
                             <div class="node-info" style="bottom: auto; top: 30px;">
                                 <div class="node-title">Punta Arenas</div>
-                                <div class="node-desc">Hub logístico. Potencial masivo en SEO internacional para el mercado Antártico y Cruceros.</div>
+                                <div class="node-subtitle">Antarctic & Corporate Hub</div>
+                                <div class="node-desc">El centro logístico del fin del mundo. Búsquedas masivas sobre "Expedición Antártica" requieren atención 24/7 con IA.</div>
+                                <span class="node-metric">📡 Oportunidad IA: Crítica</span>
+                            </div>
+                        </div>
+
+                        <!-- Tierra del Fuego -->
+                        <div class="map-node" style="top: 75%; left: 75%;">
+                            <div class="ping" style="background:#ef4444; box-shadow:0 0 15px rgba(239,68,68,0.5);"></div>
+                            <div class="node-info" style="bottom: auto; top: 30px; border-color:#ef4444;">
+                                <div class="node-title" style="color:#ef4444;">Tierra del Fuego</div>
+                                <div class="node-subtitle">Exploration & Sport Fishing</div>
+                                <div class="node-desc">El destino final para exploradores remotos y pescadores deportivos internacionales. Buscan lo "intacto" y lo "desconocido".</div>
+                                <span class="node-metric">🧭 Potencial de Branding: 100%</span>
                             </div>
                         </div>
                     </div>
