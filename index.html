@@ -1777,15 +1777,15 @@
                 const ticket = parseInt(sTicket.value);
                 const convBoost = 0.03; // Objetivo Boost 3%
 
-                vVisitas.textContent = visitas.toLocaleString();
-                vConv.textContent = sConv.value;
-                vTicket.textContent = ticket.toLocaleString();
+                vVisitas.textContent = visitas.toLocaleString('de-DE');
+                vConv.textContent = sConv.value.replace('.', ',');
+                vTicket.textContent = ticket.toLocaleString('de-DE');
 
                 const ingresosActuales = visitas * convActual * ticket;
                 const ingresosBoost = visitas * convBoost * ticket;
                 const fuga = Math.max(0, ingresosBoost - ingresosActuales);
 
-                roiResult.textContent = `$${Math.round(fuga).toLocaleString()}`;
+                roiResult.textContent = `$${Math.round(fuga).toLocaleString('de-DE')}`;
             };
 
             [sVisitas, sConv, sTicket].forEach(s => s.addEventListener('input', calculateROI));
