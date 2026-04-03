@@ -565,9 +565,14 @@
         @keyframes scan-rotate { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
         .map-grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(40,228,211,0.1) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; opacity: 0.3; }
 
-        /* Prevent clipping for info cards */
-        .map-container { overflow: visible !important; min-height: 400px; }
-        @media(min-width: 1024px) { .map-container { min-height: 550px; } }
+        /* Tactical Map Display Box */
+        .info-display-box { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 280px; min-height: 200px; background: rgba(5,10,48,0.95); backdrop-filter: blur(20px); border: 2px solid rgba(40,228,211,0.5); border-radius: 2rem; padding: 2rem; z-index: 40; opacity: 1; transition: all 0.4s ease; box-shadow: 0 0 50px rgba(40,228,211,0.2), inset 0 0 20px rgba(40,228,211,0.1); pointer-events: none; display: flex; flex-col; justify-content: center; }
+        .info-display-placeholder { text-align: center; color: rgba(40,228,211,0.5); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3em; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 0.3; } 50% { opacity: 0.8; } 100% { opacity: 0.3; } }
+        
+        /* Node info overrides for central display logic */
+        .node-data { display: none; }
+        .map-node:hover .ping { transform: scale(1.5); background: #fff; box-shadow: 0 0 20px #fff; }
     </style>
     <script type="application/ld+json">
     {
@@ -798,10 +803,18 @@
                 </div>
 
                 <div class="reveal relative flex justify-center">
-                    <div class="map-container overflow-visible">
+                    <div class="map-container">
                         <!-- Tactical Radar Overlays -->
                         <div class="map-grid"></div>
                         <div class="map-scan"></div>
+                        
+                        <!-- CENTRAL DISPLAY PANEL -->
+                        <div id="central-display" class="info-display-box">
+                            <div class="info-display-placeholder">
+                                <i data-lucide="crosshair" class="w-8 h-8 mx-auto mb-4 opacity-50"></i>
+                                Seleccione Objetivo
+                            </div>
+                        </div>
                         
                         <!-- Enhanced Stylized Magallanes & Tierra del Fuego Map -->
                         <svg class="map-svg relative z-10" viewBox="0 -50 500 750" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -810,70 +823,35 @@
                             <circle cx="250" cy="350" r="200" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
                             <circle cx="250" cy="350" r="300" stroke="rgba(40,228,211,0.05)" stroke-width="1" />
                             
-                            <!-- Continent Path (Refined Styling) -->
+                            <!-- Continent Path -->
                             <path class="map-path" d="M120 40L140 60L180 55L220 70L240 120L280 140L300 200L340 220L310 280L330 350L310 400L250 420L200 450L150 400L160 300L120 250L80 200L100 100L120 40Z" style="fill:rgba(10,17,69,0.9); stroke:rgba(40,228,211,0.6);" />
                             <!-- Tierra del Fuego Path -->
                             <path class="map-path" d="M300 450L450 480L480 600L400 650L300 600L280 550L300 450Z" style="fill:rgba(10,17,69,0.9); stroke:rgba(239,68,68,0.4);" />
-                            <!-- Archipelago elements -->
-                            <circle cx="250" cy="500" r="8" class="map-path" style="fill:rgba(40,228,211,0.3);" />
-                            <circle cx="280" cy="480" r="6" class="map-path" style="fill:rgba(40,228,211,0.3);" />
                         </svg>
 
-                        <!-- LOS 4 ELEMENTOS: PUNTOS ESTRATÉGICOS -->
-                        <!-- 1. TORRES DEL PAINE -->
-                        <div class="map-node" style="top: 12%; left: 32%;">
+                        <!-- PUNTOS TÁCTICOS CON DATA-ATTRIBUTES -->
+                        <div class="map-node" style="top: 12%; left: 32%;" 
+                             onmouseenter="updateDisplay('Paine: El Origen', 'Eco-Luxury Global Hub', 'Búsquedas internacionales (+45%). La falta de UX móvil desvía el 60% a OTAs.', '💎 Oportunidad: Direct Booking', '#28e4d3')"
+                             onmouseleave="resetDisplay()">
                             <div class="ping"></div>
-                            <div class="node-info">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                    <div class="node-title">Elemento I: Paine</div>
-                                </div>
-                                <div class="node-subtitle">Eco-Luxury Global Hub</div>
-                                <div class="node-desc">Búsquedas internacionales crecieron un 45%. El usuario busca "Trekking Premium" directo. La falta de UX móvil en lodges locales desvía el 60% a OTAs internacionales.</div>
-                                <span class="node-metric">💎 Oportunidad: Direct Booking</span>
-                            </div>
                         </div>
 
-                        <!-- 2. PUERTO NATALES -->
-                        <div class="map-node" style="top: 32%; left: 42%;">
+                        <div class="map-node" style="top: 32%; left: 42%;" 
+                             onmouseenter="updateDisplay('Puerto Natales', 'Adventure Experience', 'El 80% planea vía Google Maps. Sin autoridad World-Class, eres invisible.', '📈 Impacto: Fuga de Comisiones', '#28e4d3')"
+                             onmouseleave="resetDisplay()">
                             <div class="ping"></div>
-                            <div class="node-info">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                    <div class="node-title">Elemento II: Natales</div>
-                                </div>
-                                <div class="node-subtitle">Adventure Experience</div>
-                                <div class="node-desc">El 80% de los viajeros de aventura planea vía Google Maps. Si tu ficha y web no reflejan autoridad 'World-Class', eres invisible para el mercado global.</div>
-                                <span class="node-metric">📈 Impacto: Fuga de Comisiones</span>
-                            </div>
                         </div>
 
-                        <!-- 3. PUNTA ARENAS -->
-                        <div class="map-node" style="top: 55%; left: 38%;">
+                        <div class="map-node" style="top: 55%; left: 38%;" 
+                             onmouseenter="updateDisplay('Punta Arenas', 'Antarctic Hub', 'Demanda 24/7 de cotizaciones. Sin IA pierdes al cliente antes de aterrizar.', '📡 Oportunidad IA: Crítica', '#28e4d3')"
+                             onmouseleave="resetDisplay()">
                             <div class="ping"></div>
-                            <div class="node-info" style="bottom: auto; top: 30px;">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
-                                    <div class="node-title">Elemento III: P. Arenas</div>
-                                </div>
-                                <div class="node-subtitle">Antarctic & Logistics Hub</div>
-                                <div class="node-desc">Cruce de expediciones. Demanda 24/7 de cotizaciones internacionales. Sin IA de respuesta inmediata, el cliente reserva con la competencia antes de aterrizar.</div>
-                                <span class="node-metric">📡 Oportunidad IA: Crítica</span>
-                            </div>
                         </div>
 
-                        <!-- 4. TIERRA DEL FUEGO -->
-                        <div class="map-node" style="top: 78%; left: 78%;">
+                        <div class="map-node" style="top: 78%; left: 78%;" 
+                             onmouseenter="updateDisplay('T. del Fuego', 'Remote Frontiers', 'Nuevo Must para buscadores de silencio. Potencial de Branding 100% virgen.', '🧭 Potencial: Dominio Total', '#ef4444')"
+                             onmouseleave="resetDisplay()">
                             <div class="ping" style="background:#ef4444; box-shadow:0 0 15px rgba(239,68,68,0.5);"></div>
-                            <div class="node-info" style="bottom: auto; top: 30px; border-color:#ef4444;">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                                    <div class="node-title" style="color:#ef4444;">Elemento IV: T. del Fuego</div>
-                                </div>
-                                <div class="node-subtitle">Remote Frontiers</div>
-                                <div class="node-desc">El nuevo 'Must' para buscadores de silencio y pesca deportiva. Potencial puro de Branding. La oferta actual es digitalmente inexistente o precaria.</div>
-                                <span class="node-metric">🧭 Potencial: Dominio Total</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1939,6 +1917,39 @@
             [sVisitas, sConv, sTicket].forEach(s => s.addEventListener('input', calculateROI));
             calculateROI();
         });
+
+        function resetDisplay() {
+            const display = document.getElementById('central-display');
+            if(!display) return;
+            display.style.transform = 'translate(-50%, -50%) scale(0.95)';
+            display.style.opacity = '0.8';
+            display.innerHTML = `
+                <div class="info-display-placeholder text-center">
+                    <i data-lucide="crosshair" class="w-8 h-8 mx-auto mb-4 opacity-50"></i>
+                    Seleccione Objetivo
+                </div>
+            `;
+            if(window.lucide) lucide.createIcons();
+        }
+
+        function updateDisplay(title, subtitle, desc, metric, color) {
+            const display = document.getElementById('central-display');
+            if(!display) return;
+            display.style.transform = 'translate(-50%, -50%) scale(1)';
+            display.style.opacity = '1';
+            display.style.borderColor = color + '80';
+            display.innerHTML = `
+                <div class="text-left animate-fade-in" style="width: 100%;">
+                    <div class="flex items-center gap-2 mb-2">
+                        <div class="w-2 h-2 rounded-full" style="background: ${color}"></div>
+                        <div class="node-title" style="color: ${color}; margin-bottom: 0;">${title}</div>
+                    </div>
+                    <div class="node-subtitle" style="font-size: 0.55rem;">${subtitle}</div>
+                    <div class="node-desc" style="font-size: 0.72rem; line-height: 1.3; margin-bottom: 0.6rem; color: rgba(255,255,255,0.9);">${desc}</div>
+                    <div class="node-metric" style="color: ${color}; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem; font-size: 0.65rem;">${metric}</div>
+                </div>
+            `;
+        }
     </script>
 </body>
 </html>
