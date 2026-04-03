@@ -94,7 +94,7 @@
             --text: #e6ecf2; --text-muted: #7a8898; --text-faint: #3d4d5c;
             --cyan: #00cfc4; --cyan-dim: rgba(0,207,196,0.10); --cyan-glow: rgba(0,207,196,0.22);
             --gold: #f5a623; --gold-dim: rgba(245,166,35,0.10);
-            --violet: #ef4444; --violet-dim: rgba(239,68,68,0.1); --violet-glow: rgba(239,68,68,0.22);
+            --violet: #a855f7; --violet-dim: rgba(168, 85, 247, 0.1); --violet-glow: rgba(168, 85, 247, 0.22);
             --shadow-card: 0 2px 8px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.3);
             --shadow-feat: 0 0 0 1.5px var(--cyan), 0 4px 32px var(--cyan-glow), 0 20px 56px rgba(0,0,0,0.55);
             --shadow-ai: 0 0 0 1.5px var(--violet), 0 4px 32px var(--violet-glow), 0 20px 56px rgba(0,0,0,0.55);
@@ -460,12 +460,12 @@
 
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); width: 100%; max-width: 1100px; margin: 0 auto; }
 
-        .card-planes { position: relative; background: var(--surface); border: none; border-radius: var(--radius-xl); padding: var(--space-10); box-shadow: var(--shadow-card); display: flex; flex-direction: column; transition: transform var(--transition), box-shadow var(--transition); text-align: left; height: 100%; }
-        .card-planes:hover { transform: translateY(-5px); box-shadow: 0 6px 28px rgba(0,0,0,0.55), 0 28px 64px rgba(0,0,0,0.4); }
-        .card-planes.featured-planes { background: var(--surface-2); border: none; box-shadow: 0 4px 32px rgba(239,68,68,0.22), 0 20px 56px rgba(0,0,0,0.55); transform: translateY(-10px); }
-        .card-planes.featured-planes:hover { transform: translateY(-16px); }
-        .card-planes.ai-plan { background: var(--surface-2); border: none; box-shadow: 0 4px 32px rgba(0,207,196,0.22), 0 20px 56px rgba(0,0,0,0.55); }
-        .card-planes.ai-plan:hover { transform: translateY(-5px); }
+        .card-planes { position: relative; background: var(--surface); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-xl); padding: var(--space-10); box-shadow: var(--shadow-card); display: flex; flex-direction: column; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); text-align: left; height: 100%; min-height: 720px; }
+        .card-planes:hover { transform: translateY(-8px); border-color: rgba(40,228,211,0.3); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+        .card-planes.featured-planes { background: var(--surface-2); border: 1px solid rgba(239,68,68,0.3); box-shadow: 0 4px 32px rgba(239,68,68,0.22), 0 20px 56px rgba(0,0,0,0.55); transform: scale(1.05); z-index: 2; }
+        .card-planes.featured-planes:hover { transform: scale(1.08) translateY(-10px); border-color: rgba(239,68,68,0.6); }
+        .card-planes.ai-plan { background: var(--surface-2); border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 4px 32px rgba(168, 85, 247, 0.22), 0 20px 56px rgba(0,0,0,0.55); }
+        .card-planes.ai-plan:hover { border-color: var(--violet); }
 
         .top-badge-planes { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); display: inline-flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-4); font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-full); white-space: nowrap; z-index: 10; }
         .badge-red-planes { background: #ef4444; color: #fff; }
@@ -642,8 +642,8 @@
                 muted
                 loop
                 playsinline
-                preload="metadata"
-                poster="https://images.unsplash.com/photo-1706382812242-cb0a9448c7f7?auto=format&fit=crop&w=1920&q=80"
+                preload="auto"
+                poster="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1920&q=80"
             >
                 <!-- Video hero: boostpatagonia.mp4 (mismo directorio que index.html) -->
                 <source src="boostpatagonia.mp4" type="video/mp4" />
