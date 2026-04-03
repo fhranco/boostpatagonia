@@ -545,6 +545,18 @@
         .result-box { background: rgba(239, 68, 68, 0.05); border: 1px dashed rgba(239, 68, 68, 0.3); border-radius: 2rem; padding: 2rem; text-align: center; }
         .result-number { font-family: var(--font-display); font-size: 3.5rem; font-weight: 900; line-height: 1; color: #ef4444; text-shadow: 0 0 30px rgba(239,68,68,0.4); margin-bottom: 0.5rem; }
         .leak-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em; color: #ef4444; opacity: 0.8; }
+
+        /* Magallanes Map Styles */
+        .map-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto; min-height: 500px; }
+        .map-svg { width: 100%; height: auto; filter: drop-shadow(0 0 30px rgba(40,228,211,0.15)); transition: all 0.5s ease; }
+        .map-path { fill: #0a1145; stroke: rgba(40,228,211,0.4); stroke-width: 1.5; transition: all 0.5s ease; }
+        .map-node { position: absolute; cursor: pointer; z-index: 20; color: #fff; }
+        .ping { position: absolute; width: 15px; height: 15px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); animation: ping-anim 2s infinite; }
+        @keyframes ping-anim { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(3.5); opacity: 0; } }
+        .node-info { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(10px); width: 220px; background: rgba(5,10,48,0.9); backdrop-filter: blur(12px); border: 1px solid rgba(40,228,211,0.3); border-radius: 1.5rem; padding: 1.5rem; opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 30; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .map-node:hover .node-info { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .node-title { font-size: 0.7rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 0.5rem; }
+        .node-desc { font-size: 0.8rem; line-height: 1.5; color: rgba(255,255,255,0.7); font-weight: 300; }
     </style>
     <script type="application/ld+json">
     {
@@ -740,6 +752,73 @@
             </div>
         </div>
     </section>
+
+    <!-- RADAR DE OPORTUNIDADES MAGALLANES -->
+    <section class="py-32 px-6 relative overflow-hidden" id="radar">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="neon-text text-[10px] font-black tracking-[0.4em] uppercase mb-4 block">Visión Territorial</span>
+                    <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-tight mb-8">
+                        Radar de <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-[#28e4d3]">Oportunidades</span>
+                    </h2>
+                    <p class="text-white/40 text-lg md:text-xl font-light leading-relaxed mb-10 italic">
+                        Magallanes no es una zona cualquiera; es el destino más codiciado. Hemos mapeado las brechas digitales de cada zona para que tu marca tome ventaja este 2026.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white/5 border-l-2 border-[#28e4d3] rounded-r-2xl">
+                            <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Punta Arenas: Hub Senior</h4>
+                            <p class="text-white/40 text-sm">Oportunidad masiva en automatización corporativa y SEO multiidioma para cruceros.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 border-l-2 border-red-500 rounded-r-2xl">
+                            <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Pto. Natales & Paine: Lujo Directo</h4>
+                            <p class="text-white/40 text-sm">Recuperación de hasta un 35% de margen neto reduciendo comisiones de OTAs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal relative flex justify-center">
+                    <div class="map-container">
+                        <!-- Simplified Stylized Magallanes Map -->
+                        <svg class="map-svg" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="map-path" d="M120 40L140 60L180 55L220 70L240 120L280 140L300 200L340 220L310 280L330 350L310 400L350 480L320 540L280 500L220 520L180 580L120 540L80 480L100 400L60 320L80 220L120 180L100 120L120 40Z" />
+                            <path class="map-path" d="M380 420L420 440L450 480L430 520L380 540L360 480L380 420Z" />
+                        </svg>
+
+                        <!-- PUNTOS INTERACTIVOS -->
+                        <!-- Torres del Paine -->
+                        <div class="map-node" style="top: 25%; left: 55%;">
+                            <div class="ping"></div>
+                            <div class="node-info">
+                                <div class="node-title">Torres del Paine</div>
+                                <div class="node-desc">Mercado de ultra-lujo. Exigen carga web < 1s y reserva directa instantánea.</div>
+                            </div>
+                        </div>
+
+                        <!-- Puerto Natales -->
+                        <div class="map-node" style="top: 40%; left: 65%;">
+                            <div class="ping"></div>
+                            <div class="node-info">
+                                <div class="node-title">Puerto Natales</div>
+                                <div class="node-desc">Portal de aventura. El foco 2026 es el Branding Premium para escapar de las comisiones de Booking.</div>
+                            </div>
+                        </div>
+
+                        <!-- Punta Arenas -->
+                        <div class="map-node" style="top: 65%; left: 60%;">
+                            <div class="ping"></div>
+                            <div class="node-info" style="bottom: auto; top: 30px;">
+                                <div class="node-title">Punta Arenas</div>
+                                <div class="node-desc">Hub logístico. Potencial masivo en SEO internacional para el mercado Antártico y Cruceros.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- SECCIÓN: EL GRAN DOLOR (LA CRUDA REALIDAD) -->
     <section class="py-24 px-6 relative overflow-hidden flex flex-col justify-center" style="background: linear-gradient(to bottom, #050a30, #03071e);">
