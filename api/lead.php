@@ -113,7 +113,9 @@ $cuerpo_cliente = "
             <a href='https://wa.me/56995684198' class='btn'>Agendar por WhatsApp</a>
         </div>
         <div class='footer'>
-            Recuerda que somos un proyecto de <a href="https://patagoniacoach.com" style="color: #94a3b8; text-decoration: underline;">Patagoniacoach</a>.<br>
+            Recuerda que somos un proyecto de la <a href="https://agenciapatagoniacoach.cl" style="color: #94a3b8; text-decoration: underline;">Agencia Patagoniacoach</a>.<br>
+            Te invitamos a visitar nuestras páginas web:<br>
+            <a href="https://boostpatagonia.com" style="color: #28e4d3; text-decoration: none; font-weight: bold;">boostpatagonia.com</a> | <a href="https://agenciapatagoniacoach.cl" style="color: #28e4d3; text-decoration: none; font-weight: bold;">agenciapatagoniacoach.cl</a><br><br>
             © 2026 BoostPatagonia. Todos los derechos reservados.<br>
             Magallanes, Patagonia Chilena.
         </div>
