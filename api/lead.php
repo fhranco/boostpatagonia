@@ -106,8 +106,8 @@ $cuerpo_cliente = "
         <img src='https://boostpatagonia.com/boostpatagonia.png' alt='BoostPatagonia' class='logo'>
         <h1>¡Postulación Recibida!</h1>
         <p>Hola <span class='highlight'>{$nombre}</span>,</p>
-        <p>He recibido correctamente tu postulación a mi convocatoria de la temporada 2026–2027.</p>
-        <p>Analizaré detalladamente a todos los candidatos postulados. Los resultados se publicarán el próximo <strong>15 de agosto</strong>, fecha en la cual me comunicaré personalmente y de forma exclusiva con el negocio seleccionado para comenzar a trabajar.</p>
+        <p>Hemos recibido correctamente tu postulación a nuestra convocatoria de la temporada 2026–2027.</p>
+        <p>Analizaremos detalladamente a todos los candidatos postulados. Los resultados se publicarán el próximo <strong>15 de agosto</strong>, fecha en la cual nos comunicaremos personalmente y de forma exclusiva con el negocio seleccionado para comenzar a trabajar.</p>
         <div class='btn-container'>
             <a href='https://boostpatagonia.com' class='btn'>Visitar Sitio Web</a>
         </div>
