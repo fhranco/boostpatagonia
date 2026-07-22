@@ -108,7 +108,7 @@ $cuerpo_cliente = "
         <p>Hola <span class='highlight'>{$nombre}</span>,</p>
         <p>Hemos recibido correctamente tu postulación a nuestra convocatoria de la temporada 2026–2027.</p>
         <p>Analizaremos detalladamente a todos los candidatos postulados. Los resultados se publicarán el próximo <strong>15 de agosto</strong>, fecha en la cual nos comunicaremos de forma exclusiva con el negocio seleccionado para comenzar a trabajar.</p>
-        <p>Si eres el seleccionado, nos comunicaremos contigo. Pero si no quieres esperar y deseas saber cómo podemos ayudar a tu negocio hoy mismo, puedes agendar una reunión con nosotros directamente a nuestro WhatsApp: <a href="https://wa.me/56995684198" style="color: #28e4d3; font-weight: bold; text-decoration: none;">+56 9 9568 4198</a>.</p>
+        <p>Si eres el seleccionado, nos comunicaremos contigo. Pero si deseas no esperar el proceso, o si ya pasó la fecha de selección (15 de agosto) y no nos hemos comunicado contigo, puedes agendar una reunión con nosotros directamente a nuestro WhatsApp: <a href="https://wa.me/56995684198" style="color: #28e4d3; font-weight: bold; text-decoration: none;">+56 9 9568 4198</a> para saber cómo podemos ayudar a tu negocio.</p>
         <div class='btn-container'>
             <a href='https://wa.me/56995684198' class='btn'>Agendar por WhatsApp</a>
         </div>
