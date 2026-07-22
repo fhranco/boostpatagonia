@@ -80,15 +80,49 @@ if (!$enviado_admin && $is_local) {
     $enviado_admin = true;
 }
 
-// --- 5. RESPUESTA AUTOMÁTICA AL CLIENTE ---
+// --- 5. RESPUESTA AUTOMÁTICA AL CLIENTE (EMAIL HTML PREMIUM) ---
 $asunto_cliente = "Confirmación de solicitud - BoostPatagonia";
-$cuerpo_cliente = "Hola $nombre,\n\n"
-                . "Hemos recibido tu solicitud para el diagnóstico IDS de la temporada 2026–2027.\n"
-                . "Un consultor senior se pondrá en contacto contigo a la brevedad vía WhatsApp.\n\n"
-                . "Gracias por confiar en BoostPatagonia.\n";
 
-$headers_cliente = "From: BoostPatagonia <proyectos@boostpatagonia.com>\r\n"
-                 . "Content-Type: text/plain; charset=UTF-8";
+$cuerpo_cliente = "
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Postulación Recibida</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #03071e; margin: 0; padding: 40px 10px; color: #e6ecf2; }
+        .card { max-width: 550px; margin: 0 auto; background: #050a30; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+        .logo { max-width: 160px; height: auto; margin-bottom: 30px; }
+        h1 { font-size: 22px; color: #ffffff; margin-bottom: 20px; font-weight: 800; letter-spacing: -0.02em; }
+        p { font-size: 15px; line-height: 1.6; color: #cbd5e1; margin-bottom: 25px; text-align: left; }
+        .highlight { color: #28e4d3; font-weight: 700; }
+        .btn-container { text-align: center; margin-top: 10px; }
+        .btn { display: inline-block; padding: 14px 28px; background-color: #28e4d3; color: #050a30 !important; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .footer { font-size: 10px; color: #64748b; margin-top: 35px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class='card'>
+        <img src='https://boostpatagonia.com/boostpatagonia.png' alt='BoostPatagonia' class='logo'>
+        <h1>¡Postulación Recibida!</h1>
+        <p>Hola <span class='highlight'>{$nombre}</span>,</p>
+        <p>Hemos recibido correctamente tu postulación a nuestra convocatoria de la temporada 2026–2027.</p>
+        <p>Nuestro equipo de consultores senior está evaluando la información ingresada. Nos pondremos en contacto contigo a la brevedad vía WhatsApp para los siguientes pasos.</p>
+        <div class='btn-container'>
+            <a href='https://boostpatagonia.com' class='btn'>Visitar Sitio Web</a>
+        </div>
+        <div class='footer'>
+            © 2026 BoostPatagonia. Todos los derechos reservados.<br>
+            Magallanes, Patagonia Chilena.
+        </div>
+    </div>
+</body>
+</html>
+";
+
+$headers_cliente = "MIME-Version: 1.0\r\n"
+                 . "Content-Type: text/html; charset=UTF-8\r\n"
+                 . "From: BoostPatagonia <proyectos@boostpatagonia.com>\r\n";
 
 mail($email, $asunto_cliente, $cuerpo_cliente, $headers_cliente);
 
