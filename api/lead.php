@@ -4,7 +4,7 @@ header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
 
 // --- 1. CONFIGURACIÓN DE DESTINO ---
-$mi_email = "contacto@boostpatagonia.com"; 
+$mi_email = "proyectos@boostpatagonia.com"; 
 
 // --- 2. FUNCIONES DE APOYO ---
 function wants_json(): bool {
@@ -65,6 +65,12 @@ $headers_admin = "From: BoostPatagonia <contacto@boostpatagonia.com>\r\n"
                . "Content-Type: text/plain; charset=UTF-8";
 
 $enviado_admin = mail($mi_email, $asunto_admin, $cuerpo_admin, $headers_admin);
+
+// Simular éxito en entorno local para desarrollo (evitar error de mail() no configurado localmente)
+$is_local = in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1']) || stripos($_SERVER['HTTP_HOST'] ?? '', 'localhost') !== false;
+if (!$enviado_admin && $is_local) {
+    $enviado_admin = true;
+}
 
 // --- 5. RESPUESTA AUTOMÁTICA AL CLIENTE ---
 $asunto_cliente = "Confirmación de solicitud - BoostPatagonia";

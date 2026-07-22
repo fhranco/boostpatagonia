@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocatoria Abierta: Carta Digital Interactiva | BoostPatagonia</title>
+
+    <meta name="description" content="Postula para ser la empresa seleccionada y obtener el desarrollo de tu Carta Digital Interactiva, sesión fotográfica gastronómica profesional y videos de platos estrella." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#050a30" />
+
+    <link rel="canonical" href="https://boostpatagonia.com/proyecto-carta.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Convocatoria Abierta: Carta Digital Interactiva | BoostPatagonia" />
+    <meta property="og:description" content="Carta Digital Interactiva y sesión fotográfica profesional. Un solo seleccionado en Magallanes." />
+    <meta property="og:url" content="https://boostpatagonia.com/proyecto-carta.html" />
+    <meta property="og:image" content="https://boostpatagonia.com/portada.webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300..800&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --primary-dark: #050a30;
+            --accent-cyan: #28e4d3;
+            --accent-neon: #10b981;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --neon-glow: 0 0 20px rgba(40, 228, 211, 0.35);
+            --neon-green-glow: 0 0 20px rgba(16, 185, 129, 0.35);
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary-dark);
+            color: #e6ecf2;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .neon-border {
+            border: 1px solid var(--accent-cyan);
+            box-shadow: var(--neon-glow);
+        }
+
+        .neon-border-green {
+            border: 1px solid var(--accent-neon);
+            box-shadow: var(--neon-green-glow);
+        }
+
+        .neon-text-cyan {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(40, 228, 211, 0.3);
+        }
+
+        .neon-text-green {
+            color: var(--accent-neon);
+            text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .hero-aurora {
+            position: absolute;
+            inset: -20%;
+            pointer-events: none;
+            background:
+                radial-gradient(closest-side, rgba(40, 228, 211, 0.15), rgba(40, 228, 211, 0.0) 60%),
+                radial-gradient(closest-side, rgba(16, 185, 129, 0.12), rgba(5, 10, 48, 0.0) 58%);
+            filter: blur(50px);
+            opacity: 0.85;
+            animation: auroraMove 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraMove {
+            0% { transform: translate3d(-3%, -2%, 0) rotate(-1deg); }
+            100% { transform: translate3d(3%, 3%, 0) rotate(1deg); }
+        }
+
+        .pulse-badge {
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 0 20px 8px rgba(16, 185, 129, 0); }
+        }
+
+        .float-image {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .glow-button {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px var(--accent-neon);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen bg-slate-950">
+
+    <!-- Hero Aurora BG -->
+    <div class="relative overflow-hidden w-full min-h-screen flex flex-col justify-between">
+        <div class="hero-aurora"></div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 w-full px-6 py-5 lg:px-16 flex items-center justify-between border-b border-white/5 bg-slate-950/40 backdrop-blur-md">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="boostpatagonia.png" alt="BoostPatagonia Logo" style="width:180px; height:auto; display:block;">
+            </a>
+            
+            <div class="hidden md:flex gap-6 items-center">
+                <a href="index.html?convocatorias=true" class="text-xs text-red-500 hover:text-red-400 font-extrabold transition-colors tracking-wider flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Convocatorias
+                </a>
+                <a href="#postula" class="relative group overflow-hidden px-5 py-2.5 rounded-full border border-teal-400/40 hover:border-teal-400 text-teal-300 font-medium text-sm transition-all duration-300">
+                    <span class="relative z-10">Postular Ahora</span>
+                    <span class="absolute inset-0 w-full h-full bg-teal-400/10 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <main class="relative z-10 container mx-auto px-6 py-12 lg:py-24 grid lg:grid-cols-12 gap-12 items-center flex-grow">
+            <!-- Left Content -->
+            <div class="lg:col-span-7 flex flex-col gap-6 text-left">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-emerald-500/20 text-emerald-400 text-xs font-semibold tracking-wide w-fit pulse-badge">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    CONVOCATORIA ABIERTA (RESTAURANTE, CAFETERÍA O HOTEL)
+                </div>
+
+                <!-- Titles -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Carta Digital <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 font-black">
+                        Interactiva
+                    </span>
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-lg max-w-xl leading-relaxed">
+                    Convierte tu carta en una experiencia moderna que aumente tus ventas y mejore la experiencia de tus clientes. Buscamos un negocio en Magallanes para desarrollar e implementar su menú interactivo profesional.
+                </p>
+
+                <!-- Key details in grid -->
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="flex items-start gap-3 p-3.5 rounded-xl glass border-white/5">
+                        <i data-lucide="camera" class="w-5 h-5 text-teal-400 mt-1 shrink-0"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white font-display">Sesión de Fotos</h4>
+                            <p class="text-xs text-gray-400">Gastronómica profesional</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3.5 rounded-xl glass border-white/5">
+                        <i data-lucide="qr-code" class="w-5 h-5 text-teal-400 mt-1 shrink-0"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white font-display">Acceso QR</h4>
+                            <p class="text-xs text-gray-400">Escaneo fácil e instantáneo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-6">
+                    <a href="#postula" class="px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-center tracking-wide shadow-lg shadow-emerald-500/20 transition-all duration-300 glow-button">
+                        ¡POSTULA AHORA!
+                    </a>
+                    <a href="#beneficios" class="px-8 py-4 rounded-xl border border-white/10 hover:border-white/20 text-white font-semibold text-center transition-all duration-300">
+                        Ver Beneficios
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content: Device Mockups -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <!-- Glowing effect background -->
+                <div class="absolute -inset-4 bg-teal-500/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+                <!-- Floating mockups container -->
+                <div class="relative w-full max-w-md float-image">
+                    <!-- Main Tablet Mockup -->
+                    <div class="relative glass rounded-3xl p-3 border-white/10 shadow-2xl bg-slate-950/80">
+                        <!-- Simulated Menu Interface -->
+                        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-white/5 p-4 flex flex-col gap-3">
+                            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+                                <span class="text-xs font-semibold text-white tracking-wide font-display">LA CARTA DIGITAL</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 text-[9px] font-bold">INTERACTIVA</span>
+                            </div>
+                            
+                            <!-- Categories tab simulation -->
+                            <div class="flex gap-2 text-[8px] font-bold uppercase tracking-wider text-gray-400">
+                                <span class="text-teal-400 border-b border-teal-400 pb-0.5">Destacados</span>
+                                <span>Fondos</span>
+                                <span>Postres</span>
+                                <span>Bebidas</span>
+                            </div>
+
+                            <!-- Simulated items list -->
+                            <div class="flex flex-col gap-2">
+                                <div class="p-2 rounded bg-slate-800/80 border border-white/5 flex gap-2 items-center">
+                                    <div class="w-10 h-10 rounded bg-slate-700 shrink-0 flex items-center justify-center">
+                                        <i data-lucide="beef" class="w-5 h-5 text-teal-400"></i>
+                                    </div>
+                                    <div class="flex-grow min-w-0">
+                                        <h5 class="text-[10px] font-semibold text-white truncate">Cordero Patagónico al Palo</h5>
+                                        <p class="text-[8px] text-gray-400 truncate">Cocción lenta con hierbas locales.</p>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-emerald-400 shrink-0">$18.900</span>
+                                </div>
+
+                                <div class="p-2 rounded bg-slate-800/80 border border-white/5 flex gap-2 items-center">
+                                    <div class="w-10 h-10 rounded bg-slate-700 shrink-0 flex items-center justify-center">
+                                        <i data-lucide="soup" class="w-5 h-5 text-teal-400"></i>
+                                    </div>
+                                    <div class="flex-grow min-w-0">
+                                        <h5 class="text-[10px] font-semibold text-white truncate">Chupe de Centolla Austral</h5>
+                                        <p class="text-[8px] text-gray-400 truncate">Queso gratinado y centolla fresca.</p>
+                                    </div>
+                                    <span class="text-[10px] font-bold text-emerald-400 shrink-0">$16.500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overlaid Phone Mockup with QR -->
+                    <div class="absolute -bottom-8 -right-4 w-40 glass rounded-2xl p-2.5 border-white/10 shadow-2xl bg-slate-950">
+                        <div class="rounded-xl overflow-hidden bg-slate-900 border border-white/5 p-2 flex flex-col gap-2 items-center">
+                            <div class="w-8 h-2 rounded bg-slate-800 mb-1"></div>
+                            <div class="w-20 h-20 bg-white p-1 rounded-lg flex items-center justify-center shadow-md">
+                                <i data-lucide="qr-code" class="w-16 h-16 text-slate-950"></i>
+                            </div>
+                            <span class="text-[8px] text-gray-400 font-bold uppercase tracking-wider text-center mt-1">
+                                ESCANEA EL MENÚ
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Beneficios Section -->
+    <section id="beneficios" class="relative z-10 py-20 lg:py-32 border-t border-white/5 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-teal-400 text-xs font-bold tracking-widest uppercase">VENTAJAS EXCLUSIVAS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Beneficios del Programa</h2>
+                <p class="text-gray-400 mt-4 text-sm sm:text-base">
+                    Estructuramos esta convocatoria para entregar el máximo valor y profesionalismo a tu establecimiento en Magallanes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <!-- Column 1: Lo que recibe el seleccionado -->
+                <div class="flex flex-col gap-6 p-8 rounded-2xl border border-emerald-500/20 bg-emerald-950/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5">
+                        <i data-lucide="utensils" class="w-32 h-32 text-emerald-400"></i>
+                    </div>
+                    
+                    <h3 class="text-xl sm:text-2xl font-bold text-emerald-400 flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                        La Empresa Seleccionada Recibirá:
+                    </h3>
+                    <p class="text-gray-300 text-sm">
+                        Desarrollo y producción 100% cubierto por los profesionales de BoostPatagonia:
+                    </p>
+
+                    <div class="flex flex-col gap-4 mt-2">
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+                                <i data-lucide="tablet" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Desarrollo de Carta Digital Interactiva</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Diseño personalizado a tu marca, interactivo y con filtros de alérgenos/categorías.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+                                <i data-lucide="camera" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Sesión Profesional de Fotos Gastronómicas</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Fotografía de alta definición para tus platos estrella y postres.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+                                <i data-lucide="video" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Producción de Videos de Platos Destacados</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Clips en alta definición de la preparación y presentación (ideales para reels o la carta).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 shrink-0">
+                                <i data-lucide="brush" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Diseño Personalizado de la Carta</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Adaptado completamente a la identidad visual y concepto de tu negocio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 rounded-xl border border-white/5 bg-slate-900/60 flex items-start gap-3">
+                        <i data-lucide="info" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                        <p class="text-[11px] text-gray-400">
+                            * Nota: El costo del dominio y hosting son financiados directamente por el cliente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Beneficios de la carta digital -->
+                <div class="flex flex-col gap-6 p-8 rounded-2xl border border-white/5 bg-slate-900/30">
+                    <h3 class="text-xl sm:text-2xl font-bold text-teal-400 flex items-center gap-2">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        Beneficios Clave:
+                    </h3>
+                    <p class="text-gray-300 text-sm">
+                        ¿Por qué transformar tu carta física a formato interactivo?
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 mt-2">
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Mayor Conversión
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Imágenes atractivas aumentan el ticket promedio en hasta un 30%.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Menú Actualizado
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Cambia precios, stock de platos o ingredientes de forma instantánea.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Ahorro en Impresión
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Adiós al gasto constante en reimpresión de cartas de papel.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Compartir por QR
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Tus clientes acceden inmediatamente escaneando con sus celulares.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos y Proceso -->
+    <section class="relative z-10 py-20 bg-slate-900 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Requisitos -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
+                    <span class="text-teal-400 text-xs font-bold tracking-widest uppercase">FILTRO DE POSTULACIÓN</span>
+                    <h2 class="text-3xl font-extrabold text-white">Requisitos para Postular</h2>
+                    <p class="text-gray-400 text-sm">
+                        Buscamos negocios de la Región de Magallanes con oferta propia y ganas de dar el salto digital.
+                    </p>
+
+                    <div class="flex flex-col gap-3 mt-2">
+                        <div class="flex items-center gap-3 p-3 rounded-lg border border-teal-500/10 bg-teal-950/5">
+                            <i data-lucide="check" class="w-5 h-5 text-teal-400 shrink-0"></i>
+                            <span class="text-sm text-gray-200">Ser un Restaurante, Cafetería, Hotel o similar.</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg border border-teal-500/10 bg-teal-950/5">
+                            <i data-lucide="check" class="w-5 h-5 text-teal-400 shrink-0"></i>
+                            <span class="text-sm text-gray-200">Tener productos y platos propios para fotografiar.</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg border border-teal-500/10 bg-teal-950/5">
+                            <i data-lucide="check" class="w-5 h-5 text-teal-400 shrink-0"></i>
+                            <span class="text-sm text-gray-200">Querer mejorar drásticamente su presencia digital.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Cómo Postular -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <span class="text-teal-400 text-xs font-bold tracking-widest uppercase">ETAPAS</span>
+                    <h2 class="text-3xl font-extrabold text-white">Cómo Postular</h2>
+
+                    <div class="grid sm:grid-cols-3 gap-6 mt-2">
+                        <div class="p-6 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-4 -left-2 w-8 h-8 rounded-full bg-teal-500 text-slate-950 font-bold flex items-center justify-center text-sm shadow-md">1</span>
+                            <h4 class="text-sm font-semibold text-white mt-2">Envía Datos</h4>
+                            <p class="text-xs text-gray-400 mt-1">Completa el formulario de postulación que está abajo.</p>
+                        </div>
+
+                        <div class="p-6 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-4 -left-2 w-8 h-8 rounded-full bg-teal-500 text-slate-950 font-bold flex items-center justify-center text-sm shadow-md">2</span>
+                            <h4 class="text-sm font-semibold text-white mt-2">Indica Proyecto</h4>
+                            <p class="text-xs text-gray-400 mt-1">Cuéntanos sobre tu oferta gastronómica o de alojamiento.</p>
+                        </div>
+
+                        <div class="p-6 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-4 -left-2 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-sm shadow-md">3</span>
+                            <h4 class="text-sm font-semibold text-white mt-2">Evaluación</h4>
+                            <p class="text-xs text-gray-400 mt-1">El equipo evaluará la postulación en 48 horas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Postulación Form Section -->
+    <section id="postula" class="relative z-10 py-20 lg:py-32 bg-slate-950">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <span class="px-3.5 py-1.5 rounded-full border border-emerald-500/20 text-emerald-400 text-[11px] font-bold tracking-widest uppercase">ÚLTIMOS CUPOS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Formulario de Postulación</h2>
+                <p class="text-gray-400 mt-2 text-sm">
+                    Ingresa los datos de tu establecimiento para aplicar a la convocatoria de Carta Digital Interactiva.
+                </p>
+            </div>
+
+            <!-- Glassmorphic Form -->
+            <form id="postulation-form" class="glass p-8 sm:p-10 rounded-2xl border-white/10 flex flex-col gap-6 relative overflow-hidden">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="name" class="text-xs font-semibold text-gray-300">Nombre de Contacto *</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-teal-400 focus:outline-none text-sm transition-all" placeholder="Juan Pérez">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="business" class="text-xs font-semibold text-gray-300">Nombre del Local / Empresa *</label>
+                        <input type="text" id="business" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-teal-400 focus:outline-none text-sm transition-all" placeholder="Mi Restaurant / Hotel">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="text-xs font-semibold text-gray-300">Correo Electrónico *</label>
+                        <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-teal-400 focus:outline-none text-sm transition-all" placeholder="contacto@minegocio.cl">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="phone" class="text-xs font-semibold text-gray-300">WhatsApp / Teléfono *</label>
+                        <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-teal-400 focus:outline-none text-sm transition-all" placeholder="+56 9 1234 5678">
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="products" class="text-xs font-semibold text-gray-300">¿Qué tipo de platos o servicios ofreces principalmente? *</label>
+                    <textarea id="products" required rows="3" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-teal-400 focus:outline-none text-sm transition-all resize-none" placeholder="Comida típica regional, repostería casera, menús ejecutivos, servicios de hotelería..."></textarea>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="message" class="text-xs font-semibold text-gray-300">¿Por qué deberías ser el único seleccionado? (Opcional)</label>
+                    <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-teal-400 focus:outline-none text-sm transition-all resize-none" placeholder="Cuéntanos un poco más de tu historia y motivación..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 mt-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold tracking-wide shadow-lg shadow-emerald-500/10 transition-all duration-300 glow-button flex items-center justify-center gap-2">
+                    <span>ENVIAR POSTULACIÓN AHORA</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+
+                <!-- Status Messages -->
+                <div id="form-feedback" class="hidden p-4 rounded-lg text-sm text-center"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-12 border-t border-white/5 bg-slate-950">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="boostpatagonia.png" alt="BoostPatagonia Logo" class="h-8 w-auto">
+                <span class="text-sm text-gray-500">© 2026 BoostPatagonia. Todos los derechos reservados.</span>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Volver al Inicio</a>
+                <a href="mailto:proyectos@boostpatagonia.com" class="text-gray-400 hover:text-white transition-colors">proyectos@boostpatagonia.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Form Submit
+        document.getElementById('postulation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const feedback = document.getElementById('form-feedback');
+            const button = this.querySelector('button[type="submit"]');
+            
+            const name = document.getElementById('name').value;
+            const business = document.getElementById('business').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const products = document.getElementById('products').value;
+            const message = document.getElementById('message') ? document.getElementById('message').value : '';
+
+            button.disabled = true;
+            button.innerHTML = 'Enviando...';
+            
+            // Format data as expected by api/lead.php
+            const formData = new FormData();
+            formData.append('responsable', name);
+            formData.append('whatsapp', phone);
+            formData.append('email', email);
+            formData.append('categoria', 'Carta Digital Convocatoria');
+            formData.append('codigo', `Establecimiento: ${business} | Especialidad: ${products} | Mensaje: ${message}`);
+
+            fetch('api/lead.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    feedback.classList.remove('hidden', 'bg-red-500/10', 'text-red-400', 'border-red-500/20');
+                    feedback.classList.add('bg-emerald-500/10', 'text-emerald-400', 'border', 'border-emerald-500/20');
+                    feedback.innerHTML = '<strong>¡Postulación Enviada con Éxito!</strong> Evaluaremos tus datos y te contactaremos a la brevedad.';
+                    
+                    button.innerHTML = '¡POSTULADO!';
+                    button.classList.remove('bg-emerald-500', 'hover:bg-emerald-400');
+                    button.classList.add('bg-gray-800', 'text-gray-500', 'cursor-not-allowed');
+                    
+                    // Clear fields
+                    document.getElementById('name').value = '';
+                    document.getElementById('business').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('phone').value = '';
+                    document.getElementById('products').value = '';
+                    if(document.getElementById('message')) document.getElementById('message').value = '';
+                } else {
+                    throw new Error('Error al enviar la postulación.');
+                }
+            })
+            .catch(error => {
+                feedback.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400', 'border-emerald-500/20');
+                feedback.classList.add('bg-red-500/10', 'text-red-400', 'border', 'border-red-500/20');
+                feedback.innerHTML = '<strong>Hubo un problema.</strong> Por favor intenta nuevamente o envía un correo a proyectos@boostpatagonia.com';
+                button.disabled = false;
+                button.innerHTML = 'ENVIAR POSTULACIÓN AHORA';
+            });
+        });
+    </script>
+</body>
+</html>

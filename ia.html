@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es-CL" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocatoria Exclusiva: Plan de Implementación de Inteligencia Artificial | BoostPatagonia</title>
+
+    <meta name="description" content="Postula para ser la única empresa seleccionada y desarrollar tu Plan de Implementación de Inteligencia Artificial en 30 días completamente cubierto por BoostPatagonia." />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#050a30" />
+
+    <link rel="canonical" href="https://boostpatagonia.com/proyecto-ia.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Convocatoria Exclusiva: Plan de Implementación de IA | BoostPatagonia" />
+    <meta property="og:description" content="Desarrolla tu Plan de Implementación de IA en 30 días. Un solo seleccionado en Magallanes." />
+    <meta property="og:url" content="https://boostpatagonia.com/proyecto-ia.html" />
+    <meta property="og:image" content="https://boostpatagonia.com/portada.webp" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300..800&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --primary-dark: #050a30;
+            --accent-cyan: #28e4d3;
+            --accent-neon: #10b981;
+            --accent-violet: #a855f7;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --neon-glow: 0 0 20px rgba(40, 228, 211, 0.35);
+            --neon-violet-glow: 0 0 20px rgba(168, 85, 247, 0.35);
+            --font-display: 'Sora', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary-dark);
+            color: #e6ecf2;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .neon-border {
+            border: 1px solid var(--accent-cyan);
+            box-shadow: var(--neon-glow);
+        }
+
+        .neon-border-violet {
+            border: 1px solid var(--accent-violet);
+            box-shadow: var(--neon-violet-glow);
+        }
+
+        .neon-text-cyan {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(40, 228, 211, 0.3);
+        }
+
+        .neon-text-violet {
+            color: var(--accent-violet);
+            text-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
+        }
+
+        .hero-aurora {
+            position: absolute;
+            inset: -20%;
+            pointer-events: none;
+            background:
+                radial-gradient(closest-side, rgba(40, 228, 211, 0.15), rgba(40, 228, 211, 0.0) 60%),
+                radial-gradient(closest-side, rgba(168, 85, 247, 0.12), rgba(5, 10, 48, 0.0) 58%);
+            filter: blur(50px);
+            opacity: 0.85;
+            animation: auroraMove 15s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraMove {
+            0% { transform: translate3d(-3%, -2%, 0) rotate(-1deg); }
+            100% { transform: translate3d(3%, 3%, 0) rotate(1deg); }
+        }
+
+        .pulse-badge {
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 0 20px 8px rgba(168, 85, 247, 0); }
+        }
+
+        .float-image {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .glow-button {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px var(--accent-violet);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen bg-slate-950">
+
+    <!-- Hero Aurora BG -->
+    <div class="relative overflow-hidden w-full min-h-screen flex flex-col justify-between">
+        <div class="hero-aurora"></div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 w-full px-6 py-5 lg:px-16 flex items-center justify-between border-b border-white/5 bg-slate-950/40 backdrop-blur-md">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="boostpatagonia.png" alt="BoostPatagonia Logo" style="width:180px; height:auto; display:block;">
+            </a>
+            
+            <div class="hidden md:flex gap-6 items-center">
+                <a href="index.html?convocatorias=true" class="text-xs text-red-500 hover:text-red-400 font-extrabold transition-colors tracking-wider flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Convocatorias
+                </a>
+                <a href="#postula" class="relative group overflow-hidden px-5 py-2.5 rounded-full border border-teal-400/40 hover:border-teal-400 text-teal-300 font-medium text-sm transition-all duration-300">
+                    <span class="relative z-10">Postular Ahora</span>
+                    <span class="absolute inset-0 w-full h-full bg-teal-400/10 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <main class="relative z-10 container mx-auto px-6 py-12 lg:py-24 grid lg:grid-cols-12 gap-12 items-center flex-grow">
+            <!-- Left Content -->
+            <div class="lg:col-span-7 flex flex-col gap-6 text-left">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-purple-500/20 text-purple-400 text-xs font-semibold tracking-wide w-fit pulse-badge">
+                    <span class="w-2.5 h-2.5 rounded-full bg-purple-500 animate-ping"></span>
+                    CONVOCATORIA EXCLUSIVA (SOLO 1 EMPRESA SELECCIONADA)
+                </div>
+
+                <!-- Titles -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Plan de IA <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-300 to-cyan-400 font-black">
+                        en 30 Días
+                    </span>
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-lg max-w-xl leading-relaxed">
+                    Seleccionaremos una empresa para desarrollar un Programa de Implementación de Inteligencia Artificial durante 30 días, mediante consultoría estratégica, sesiones de trabajo y material práctico para iniciar la adopción de IA en su organización.
+                </p>
+
+                <!-- Key details in grid -->
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="flex items-start gap-3 p-3.5 rounded-xl glass border-white/5">
+                        <i data-lucide="cpu" class="w-5 h-5 text-purple-400 mt-1 shrink-0"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white font-display">Adopción de IA</h4>
+                            <p class="text-xs text-gray-400">Automatizaciones eficientes</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3.5 rounded-xl glass border-white/5">
+                        <i data-lucide="line-chart" class="w-5 h-5 text-purple-400 mt-1 shrink-0"></i>
+                        <div>
+                            <h4 class="text-sm font-semibold text-white font-display">Hoja de Ruta</h4>
+                            <p class="text-xs text-gray-400">Estrategia y herramientas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-6">
+                    <a href="#postula" class="px-8 py-4 rounded-xl bg-purple-500 hover:bg-purple-400 text-slate-950 font-bold text-center tracking-wide shadow-lg shadow-purple-500/20 transition-all duration-300 glow-button">
+                        ¡POSTULA AHORA!
+                    </a>
+                    <a href="#beneficios" class="px-8 py-4 rounded-xl border border-white/10 hover:border-white/20 text-white font-semibold text-center transition-all duration-300">
+                        Ver Beneficios
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content: Device Mockups -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <!-- Glowing effect background -->
+                <div class="absolute -inset-4 bg-purple-500/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+                <!-- Floating mockups container -->
+                <div class="relative w-full max-w-md float-image">
+                    <!-- Main Boardroom Simulation -->
+                    <div class="relative glass rounded-3xl p-3 border-white/10 shadow-2xl bg-slate-950/80">
+                        <div class="rounded-2xl overflow-hidden bg-slate-900 border border-white/5 p-4 flex flex-col gap-3 relative">
+                            <div class="flex justify-between items-center pb-2 border-b border-white/5">
+                                <span class="text-xs font-semibold text-white tracking-wide font-display">PROGRAMA DE IMPLEMENTACIÓN IA</span>
+                                <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 text-[9px] font-bold">ESTRATEGIA</span>
+                            </div>
+                            
+                            <!-- Flowchart simulation -->
+                            <div class="flex flex-col gap-2.5 p-1">
+                                <div class="p-2 rounded bg-slate-800 border border-purple-500/30 flex items-center justify-between">
+                                    <span class="text-[9px] font-bold text-gray-300 uppercase">1. Diagnóstico Inicial</span>
+                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-purple-400"></i>
+                                </div>
+                                <div class="p-2 rounded bg-slate-800 border border-purple-500/30 flex items-center justify-between">
+                                    <span class="text-[9px] font-bold text-gray-300 uppercase">2. Sesiones de Trabajo</span>
+                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-purple-400"></i>
+                                </div>
+                                <div class="p-2 rounded bg-purple-500/10 border border-purple-400 flex items-center justify-between">
+                                    <span class="text-[9px] font-bold text-purple-400 uppercase">3. Plan de Adopción e IA</span>
+                                    <i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Beneficios Section -->
+    <section id="beneficios" class="relative z-10 py-20 lg:py-32 border-t border-white/5 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">VENTAJAS EXCLUSIVAS</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Beneficios del Programa</h2>
+                <p class="text-gray-400 mt-4 text-sm sm:text-base">
+                    Hemos estructurado este programa de acompañamiento estratégico para dar el puntapié inicial en tu proceso de adopción de herramientas de IA.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-stretch">
+                <!-- Column 1: Lo que recibe el seleccionado -->
+                <div class="flex flex-col gap-6 p-8 rounded-2xl border border-purple-500/20 bg-purple-950/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5">
+                        <i data-lucide="brain-circuit" class="w-32 h-32 text-purple-400"></i>
+                    </div>
+                    
+                    <h3 class="text-xl sm:text-2xl font-bold text-purple-400 flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+                        La Empresa Seleccionada Recibirá:
+                    </h3>
+                    <p class="text-gray-300 text-sm">
+                        Consultoría estratégica y diseño de automatización 100% cubierta:
+                    </p>
+
+                    <div class="flex flex-col gap-4 mt-2">
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                                <i data-lucide="search" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Diagnóstico Inicial de Oportunidades</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Analizamos tus procesos actuales y detectamos dónde aplicar automatizaciones de IA.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                                <i data-lucide="map" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Plan Estratégico de Implementación</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Estrategia detallada, objetivos a cumplir y KPIs para medir la adopción.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Cuatro Sesiones Personalizadas</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Sesiones de trabajo junto a tus líderes y equipo para capacitar e iniciar el plan.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0">
+                                <i data-lucide="book-open" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Acompañamiento Durante 30 Días</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">Soporte directo de nuestro equipo de consultores senior de BoostPatagonia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Objetivos del programa -->
+                <div class="flex flex-col gap-6 p-8 rounded-2xl border border-white/5 bg-slate-900/30">
+                    <h3 class="text-xl sm:text-2xl font-bold text-teal-400 flex items-center gap-2">
+                        <i data-lucide="target" class="w-6 h-6"></i>
+                        Objetivos Clave:
+                    </h3>
+                    <p class="text-gray-300 text-sm">
+                        ¿Qué buscaremos lograr con el programa en tu organización?
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 mt-2">
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Priorización
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Identificar y priorizar iniciativas de alto impacto con IA.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Capacitación
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Formar a tu equipo para el uso práctico de herramientas recomendadas.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Productividad
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Optimización de tareas repetitivas y ahorro directo de tiempo.</p>
+                        </div>
+                        <div class="p-4 rounded-xl glass border-white/5">
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Hoja de Ruta
+                            </h4>
+                            <p class="text-xs text-gray-400 mt-1">Hoja de ruta clara para la adopción e implementación a mediano plazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requisitos y Proceso -->
+    <section class="relative z-10 py-20 bg-slate-900 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Requisitos -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
+                    <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">FILTRO DE POSTULACIÓN</span>
+                    <h2 class="text-3xl font-extrabold text-white">Quiénes Pueden Postular</h2>
+                    <p class="text-gray-400 text-sm">
+                        Convocatoria abierta para diversos sectores de la Región de Magallanes.
+                    </p>
+
+                    <div class="flex flex-col gap-3 mt-2">
+                        <div class="flex items-center gap-3 p-3 rounded-lg border border-purple-500/10 bg-purple-950/5">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 shrink-0"></i>
+                            <span class="text-sm text-gray-200">Empresas, PYMEs y Comercios de Magallanes.</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg border border-purple-500/10 bg-purple-950/5">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 shrink-0"></i>
+                            <span class="text-sm text-gray-200">Empresas de servicios y Hoteles / Restaurantes.</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg border border-purple-500/10 bg-purple-950/5">
+                            <i data-lucide="check" class="w-5 h-5 text-purple-400 shrink-0"></i>
+                            <span class="text-sm text-gray-200">Organizaciones que deseen iniciar su transformación digital.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Cómo Postular -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <span class="text-purple-400 text-xs font-bold tracking-widest uppercase">ETAPAS</span>
+                    <h2 class="text-3xl font-extrabold text-white">Cómo Postular</h2>
+
+                    <div class="grid sm:grid-cols-4 gap-4 mt-2">
+                        <div class="p-5 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-3 -left-1 w-6 h-6 rounded-full bg-purple-500 text-slate-950 font-bold flex items-center justify-center text-xs shadow-md">1</span>
+                            <h4 class="text-xs font-semibold text-white mt-2">Envía Datos</h4>
+                            <p class="text-[10px] text-gray-400 mt-1">Envíanos información de tu empresa.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-3 -left-1 w-6 h-6 rounded-full bg-purple-500 text-slate-950 font-bold flex items-center justify-center text-xs shadow-md">2</span>
+                            <h4 class="text-xs font-semibold text-white mt-2">Desafío</h4>
+                            <p class="text-[10px] text-gray-400 mt-1">Cuéntanos cuál es tu principal desafío.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-3 -left-1 w-6 h-6 rounded-full bg-purple-500 text-slate-950 font-bold flex items-center justify-center text-xs shadow-md">3</span>
+                            <h4 class="text-xs font-semibold text-white mt-2">Evaluación</h4>
+                            <p class="text-[10px] text-gray-400 mt-1">Nuestro equipo evaluará los datos.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl glass border-white/5 relative">
+                            <span class="absolute -top-3 -left-1 w-6 h-6 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-xs shadow-md">4</span>
+                            <h4 class="text-xs font-semibold text-white mt-2">Selección</h4>
+                            <p class="text-[10px] text-gray-400 mt-1">Seleccionaremos UNA empresa para el programa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Postulación Form Section -->
+    <section id="postula" class="relative z-10 py-20 lg:py-32 bg-slate-950">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <span class="px-3.5 py-1.5 rounded-full border border-purple-500/20 text-purple-400 text-[11px] font-bold tracking-widest uppercase">SOLO 1 EMPRESA SELECCIONADA</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Formulario de Postulación</h2>
+                <p class="text-gray-400 mt-2 text-sm">
+                    Ingresa los datos de tu empresa para aplicar al Programa de Implementación de Inteligencia Artificial.
+                </p>
+            </div>
+
+            <!-- Glassmorphic Form -->
+            <form id="postulation-form" class="glass p-8 sm:p-10 rounded-2xl border-white/10 flex flex-col gap-6 relative overflow-hidden">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="name" class="text-xs font-semibold text-gray-300">Nombre de Contacto *</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-purple-400 focus:outline-none text-sm transition-all" placeholder="Juan Pérez">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="business" class="text-xs font-semibold text-gray-300">Nombre de la Empresa *</label>
+                        <input type="text" id="business" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-purple-400 focus:outline-none text-sm transition-all" placeholder="Mi Empresa SPA">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="text-xs font-semibold text-gray-300">Correo Electrónico *</label>
+                        <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-purple-400 focus:outline-none text-sm transition-all" placeholder="contacto@miempresa.cl">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="phone" class="text-xs font-semibold text-gray-300">WhatsApp / Teléfono *</label>
+                        <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-purple-400 focus:outline-none text-sm transition-all" placeholder="+56 9 1234 5678">
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="products" class="text-xs font-semibold text-gray-300">¿Cuál es tu principal desafío actual en la empresa o qué deseas automatizar? *</label>
+                    <textarea id="products" required rows="3" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-purple-400 focus:outline-none text-sm transition-all resize-none" placeholder="Redactar informes, automatizar respuestas de clientes, análisis de datos de ventas, etc..."></textarea>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="message" class="text-xs font-semibold text-gray-300">¿Por qué deberías ser la empresa elegida? (Opcional)</label>
+                    <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-purple-400 focus:outline-none text-sm transition-all resize-none" placeholder="Cuéntanos un poco más de tu historia y motivación..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 mt-2 rounded-xl bg-purple-500 hover:bg-purple-400 text-slate-950 font-bold tracking-wide shadow-lg shadow-purple-500/10 transition-all duration-300 glow-button flex items-center justify-center gap-2">
+                    <span>ENVIAR POSTULACIÓN AHORA</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+
+                <!-- Status Messages -->
+                <div id="form-feedback" class="hidden p-4 rounded-lg text-sm text-center"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-12 border-t border-white/5 bg-slate-950">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <img src="boostpatagonia.png" alt="BoostPatagonia Logo" class="h-8 w-auto">
+                <span class="text-sm text-gray-500">© 2026 BoostPatagonia. Todos los derechos reservados.</span>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Volver al Inicio</a>
+                <a href="mailto:proyectos@boostpatagonia.com" class="text-gray-400 hover:text-white transition-colors">proyectos@boostpatagonia.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Form Submit
+        document.getElementById('postulation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const feedback = document.getElementById('form-feedback');
+            const button = this.querySelector('button[type="submit"]');
+            
+            const name = document.getElementById('name').value;
+            const business = document.getElementById('business').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const products = document.getElementById('products').value;
+            const message = document.getElementById('message') ? document.getElementById('message').value : '';
+
+            button.disabled = true;
+            button.innerHTML = 'Enviando...';
+            
+            // Format data as expected by api/lead.php
+            const formData = new FormData();
+            formData.append('responsable', name);
+            formData.append('whatsapp', phone);
+            formData.append('email', email);
+            formData.append('categoria', 'IA Convocatoria');
+            formData.append('codigo', `Empresa: ${business} | Desafío: ${products} | Mensaje: ${message}`);
+
+            fetch('api/lead.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    feedback.classList.remove('hidden', 'bg-red-500/10', 'text-red-400', 'border-red-500/20');
+                    feedback.classList.add('bg-emerald-500/10', 'text-emerald-400', 'border', 'border-emerald-500/20');
+                    feedback.innerHTML = '<strong>¡Postulación Enviada con Éxito!</strong> Evaluaremos tus datos y te contactaremos a la brevedad.';
+                    
+                    button.innerHTML = '¡POSTULADO!';
+                    button.classList.remove('bg-purple-500', 'hover:bg-purple-400');
+                    button.classList.add('bg-gray-800', 'text-gray-500', 'cursor-not-allowed');
+                    
+                    // Clear fields
+                    document.getElementById('name').value = '';
+                    document.getElementById('business').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('phone').value = '';
+                    document.getElementById('products').value = '';
+                    if(document.getElementById('message')) document.getElementById('message').value = '';
+                } else {
+                    throw new Error('Error al enviar la postulación.');
+                }
+            })
+            .catch(error => {
+                feedback.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400', 'border-emerald-500/20');
+                feedback.classList.add('bg-red-500/10', 'text-red-400', 'border', 'border-red-500/20');
+                feedback.innerHTML = '<strong>Hubo un problema.</strong> Por favor intenta nuevamente o envía un correo a proyectos@boostpatagonia.com';
+                button.disabled = false;
+                button.innerHTML = 'ENVIAR POSTULACIÓN AHORA';
+            });
+        });
+    </script>
+</body>
+</html>
