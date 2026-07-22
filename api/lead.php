@@ -68,8 +68,8 @@ $cuerpo_admin = "Nuevo interesado en BoostPatagonia:\n\n"
               . "Fecha: " . date('d/m/Y H:i:s') . "\n";
 
 // El 'From' DEBE ser una cuenta real de tu hosting (proyectos@boostpatagonia.com) para que Hostinger lo valide y envíe
-$headers_admin = "From: BoostPatagonia <proyectos@boostpatagonia.com>\r\n"
-               . "Reply-To: $email\r\n"
+$headers_admin = "From: BoostPatagonia <proyectos@boostpatagonia.com>\n"
+               . "Reply-To: $email\n"
                . "Content-Type: text/plain; charset=UTF-8";
 
 $enviado_admin = mail($mi_email, $asunto_admin, $cuerpo_admin, $headers_admin);
@@ -124,9 +124,10 @@ $cuerpo_cliente = "
 </html>
 ";
 
-$headers_cliente = "MIME-Version: 1.0\r\n"
-                 . "Content-Type: text/html; charset=UTF-8\r\n"
-                 . "From: BoostPatagonia <proyectos@boostpatagonia.com>\r\n";
+$headers_cliente = "From: BoostPatagonia <proyectos@boostpatagonia.com>\n"
+                 . "Reply-To: proyectos@boostpatagonia.com\n"
+                 . "MIME-Version: 1.0\n"
+                 . "Content-Type: text/html; charset=UTF-8\n";
 
 mail($email, $asunto_cliente, $cuerpo_cliente, $headers_cliente);
 
