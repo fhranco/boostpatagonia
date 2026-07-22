@@ -72,7 +72,7 @@ $headers_admin = "From: BoostPatagonia <proyectos@boostpatagonia.com>\r\n"
                . "Reply-To: $email\r\n"
                . "Content-Type: text/plain; charset=UTF-8";
 
-$enviado_admin = mail($mi_email, $asunto_admin, $cuerpo_admin, $headers_admin);
+$enviado_admin = @mail($mi_email, $asunto_admin, $cuerpo_admin, $headers_admin);
 
 // Simular éxito en entorno local para desarrollo (evitar error de mail() no configurado localmente)
 $is_local = in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1']) || stripos($_SERVER['HTTP_HOST'] ?? '', 'localhost') !== false;
@@ -129,7 +129,7 @@ $headers_cliente = "From: BoostPatagonia <proyectos@boostpatagonia.com>\r\n"
                  . "MIME-Version: 1.0\r\n"
                  . "Content-Type: text/html; charset=UTF-8";
 
-mail($email, $asunto_cliente, $cuerpo_cliente, $headers_cliente);
+@mail($email, $asunto_cliente, $cuerpo_cliente, $headers_cliente);
 
 // --- 6. RESPUESTA PARA LA WEB ---
 header('Content-Type: application/json');
