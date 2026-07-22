@@ -536,7 +536,8 @@
             formData.append('categoria', 'Tour Virtual Convocatoria');
             formData.append('codigo', `Alojamiento: ${business} | Espacios: ${products} | Mensaje: ${message}`);
 
-            fetch('api/lead.php', {
+            const leadApiUrl = window.location.port === '5173' ? 'http://localhost:8000/api/lead.php' : 'api/lead.php';
+            fetch(leadApiUrl, {
                 method: 'POST',
                 body: formData
             })

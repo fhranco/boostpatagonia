@@ -541,7 +541,8 @@
             formData.append('categoria', 'Carta Digital Convocatoria');
             formData.append('codigo', `Establecimiento: ${business} | Especialidad: ${products} | Mensaje: ${message}`);
 
-            fetch('api/lead.php', {
+            const leadApiUrl = window.location.port === '5173' ? 'http://localhost:8000/api/lead.php' : 'api/lead.php';
+            fetch(leadApiUrl, {
                 method: 'POST',
                 body: formData
             })

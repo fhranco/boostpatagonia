@@ -524,7 +524,8 @@
             formData.append('categoria', 'Tienda Virtual Convocatoria');
             formData.append('codigo', `Empresa: ${business} | Productos: ${products} | Mensaje: ${message}`);
 
-            fetch('api/lead.php', {
+            const leadApiUrl = window.location.port === '5173' ? 'http://localhost:8000/api/lead.php' : 'api/lead.php';
+            fetch(leadApiUrl, {
                 method: 'POST',
                 body: formData
             })
