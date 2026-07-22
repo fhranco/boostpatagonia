@@ -133,5 +133,5 @@ mail($email, $asunto_cliente, $cuerpo_cliente, $headers_cliente);
 
 // --- 6. RESPUESTA PARA LA WEB ---
 header('Content-Type: application/json');
-echo json_encode(['ok' => $enviado_admin]);
+echo json_encode(['ok' => true, 'mail_sent' => $enviado_admin]);
 exit;
