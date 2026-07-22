@@ -1495,14 +1495,16 @@
                     // 3. Ahora que fd existe, actualizamos el valor de 'whatsapp'
                     fd.set('whatsapp', phone);
 
-                    // 4. Finalmente, hacemos el envío a Basin
-                    const res = await fetch('https://usebasin.com/f/059801e9c278', {
+                    // 4. Finalmente, hacemos el envío a nuestra API PHP
+                    const leadApiUrl = window.location.port === '5173' ? 'http://localhost:8000/api/lead.php' : 'api/lead.php';
+                    const res = await fetch(leadApiUrl, {
                         method: 'POST',
-                        body: fd,
-                        headers: { 'Accept': 'application/json' }
+                        body: fd
                     });
 
-                    if (res.ok) {
+                    const data = await res.json();
+
+                    if (res.ok && data.ok) {
                         showMsg('RECIBIDO. TE CONTACTAREMOS A LA BREVEDAD.', true);
                         leadForm.reset();
                         tsEl.value = String(Date.now());
