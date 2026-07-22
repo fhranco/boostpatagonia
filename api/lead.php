@@ -107,11 +107,13 @@ $cuerpo_cliente = "
         <h1>¡Postulación Recibida!</h1>
         <p>Hola <span class='highlight'>{$nombre}</span>,</p>
         <p>Hemos recibido correctamente tu postulación a nuestra convocatoria de la temporada 2026–2027.</p>
-        <p>Analizaremos detalladamente a todos los candidatos postulados. Los resultados se publicarán el próximo <strong>15 de agosto</strong>, fecha en la cual nos comunicaremos personalmente y de forma exclusiva con el negocio seleccionado para comenzar a trabajar.</p>
+        <p>Analizaremos detalladamente a todos los candidatos postulados. Los resultados se publicarán el próximo <strong>15 de agosto</strong>, fecha en la cual nos comunicaremos de forma exclusiva con el negocio seleccionado para comenzar a trabajar.</p>
+        <p>Si eres el seleccionado, nos comunicaremos contigo. Pero si no quieres esperar y deseas saber cómo podemos ayudar a tu negocio hoy mismo, puedes agendar una reunión con nosotros directamente a nuestro WhatsApp: <a href="https://wa.me/56995684198" style="color: #28e4d3; font-weight: bold; text-decoration: none;">+56 9 9568 4198</a>.</p>
         <div class='btn-container'>
-            <a href='https://boostpatagonia.com' class='btn'>Visitar Sitio Web</a>
+            <a href='https://wa.me/56995684198' class='btn'>Agendar por WhatsApp</a>
         </div>
         <div class='footer'>
+            Recuerda que somos un proyecto de <a href="https://patagoniacoach.com" style="color: #94a3b8; text-decoration: underline;">Patagoniacoach</a>.<br>
             © 2026 BoostPatagonia. Todos los derechos reservados.<br>
             Magallanes, Patagonia Chilena.
         </div>
