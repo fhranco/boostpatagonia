@@ -524,14 +524,13 @@
             formData.append('categoria', 'Tienda Virtual Convocatoria');
             formData.append('codigo', `Empresa: ${business} | Productos: ${products} | Mensaje: ${message}`);
 
-            const leadApiUrl = window.location.port === '5173' ? 'http://localhost:8000/api/lead.php' : 'api/lead.php';
-            fetch(leadApiUrl, {
+            fetch('https://usebasin.com/f/059801e9c278', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: { 'Accept': 'application/json' }
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
+            .then(response => {
+                if (response.ok) {
                     feedback.classList.remove('hidden', 'bg-red-500/10', 'text-red-400', 'border-red-500/20');
                     feedback.classList.add('bg-emerald-500/10', 'text-emerald-400', 'border', 'border-emerald-500/20');
                     feedback.innerHTML = '<strong>¡Postulación Enviada con Éxito!</strong> Evaluaremos tus datos y te contactaremos a la brevedad.';
